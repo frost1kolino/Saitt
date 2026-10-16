@@ -309,24 +309,11 @@
             0%, 100% { transform: scale(1); opacity: 0.9; }
             50%      { transform: scale(1.05); opacity: 1; }
         }
-        @keyframes heartPulse {
+        @keyframes circlePulse {
             0%   { transform: scale(1); }
-            5%   { transform: scale(1.18); }
+            5%   { transform: scale(1.12); }
             10%  { transform: scale(1); }
             100% { transform: scale(1); }
-        }
-        @keyframes cornerTopLeft {
-            0%, 100% { transform: translate(0, 0); opacity: 0.75; }
-            50% { transform: translate(-6px, -6px); opacity: 1; }
-        }
-        @keyframes cornerBottomRight {
-            0%, 100% { transform: translate(0, 0); opacity: 0.75; }
-            50% { transform: translate(6px, 6px); opacity: 1; }
-        }
-        @keyframes glassShineSweep {
-            0%   { transform: translate3d(-120%, -120%, 0); }
-            35%  { transform: translate3d(120%, 120%, 0); }
-            100% { transform: translate3d(120%, 120%, 0); }
         }
 
         /* ============================================
@@ -380,7 +367,7 @@
 
         .greeting {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
             position: relative;
             padding: 0 6px;
         }
@@ -390,17 +377,17 @@
             width: 60px;
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            margin: 0 auto 20px;
+            margin: 0 auto 18px;
         }
         .greeting h1 {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-weight: 400;
-            font-size: clamp(36px, 7vw, 50px);
+            font-size: clamp(38px, 7.5vw, 52px);
             line-height: 1.1;
             letter-spacing: 2px;
             color: var(--text);
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             position: relative;
             display: inline-block;
             animation: softGlow 5s ease-in-out infinite;
@@ -417,16 +404,19 @@
         }
         .greeting h1::before { left: -44px; transform: translateY(-50%); }
         .greeting h1::after { right: -44px; transform: translateY(-50%); }
+        /* Текст крупнее и по центру */
         .greeting p {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             font-weight: 500;
-            font-size: clamp(19px, 4vw, 22px);
+            font-size: clamp(20px, 4.4vw, 24px);
             line-height: 1.6;
             color: var(--text-soft);
             letter-spacing: 0.4px;
-            max-width: 440px;
+            max-width: 460px;
             margin: 0 auto;
+            text-align: center;
+            text-wrap: balance;
         }
 
         .calendar-card {
@@ -525,7 +515,6 @@
            ============================================ */
         .where-section .section-inner { text-align: center; position: relative; }
 
-        /* ВАЖНО: увеличен margin-bottom, чтобы "for you" не залезал на карточку */
         .where-header {
             position: relative;
             display: inline-block;
@@ -695,7 +684,6 @@
            ============================================ */
         .timeline-section .section-inner { text-align: left; position: relative; }
 
-        /* ВАЖНО: увеличен margin-bottom, чтобы "for you" не залезал на контент */
         .timeline-header {
             position: relative;
             display: inline-block;
@@ -845,117 +833,52 @@
             text-align: center;
         }
 
-        .color-palette {
+        /* НОВАЯ ПАЛИТРА — 6 КРУЖКОВ */
+        .color-circles {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: clamp(10px, 2.6vw, 18px);
-            margin-top: 10px;
-            padding: 4px 10px;
-            width: 100%;
-            max-width: 500px;
+            gap: clamp(12px, 3.2vw, 22px);
+            margin-top: 18px;
+            padding: 6px 12px;
+            flex-wrap: wrap;
         }
 
-        .color-heart {
+        .color-circle {
             flex: 0 0 auto;
-            width: clamp(40px, 10vw, 58px);
-            height: clamp(40px, 10vw, 58px);
+            width: clamp(46px, 12vw, 64px);
+            height: clamp(46px, 12vw, 64px);
+            border-radius: 50%;
             position: relative;
+            box-shadow: 
+                inset 0 3px 8px rgba(255, 255, 255, 0.35),
+                inset 0 -4px 10px rgba(0, 0, 0, 0.12),
+                0 6px 16px rgba(74, 64, 56, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            animation: circlePulse 16s ease-in-out infinite;
             cursor: pointer;
-            transform-origin: center center;
             -webkit-tap-highlight-color: transparent;
-            animation: heartPulse 14s ease-in-out infinite;
         }
 
-        .color-heart:nth-child(1) { animation-delay: 0s; }
-        .color-heart:nth-child(2) { animation-delay: 2s; }
-        .color-heart:nth-child(3) { animation-delay: 4s; }
-        .color-heart:nth-child(4) { animation-delay: 6s; }
-        .color-heart:nth-child(5) { animation-delay: 8s; }
-        .color-heart:nth-child(6) { animation-delay: 10s; }
-        .color-heart:nth-child(7) { animation-delay: 12s; }
-
-        .color-heart svg { width: 100%; height: 100%; display: block; }
-
-        .inspiration-title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 18px;
-            margin-top: 14px;
-            margin-bottom: 8px;
-            color: var(--text-soft);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-        }
-        .inspiration-title::before,
-        .inspiration-title::after { content: ''; flex: 1; max-width: 70px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
-
-        .inspiration-wrapper { position: relative; width: 100%; max-width: 520px; margin: 0 auto; padding: 10px; }
-
-        .inspiration-image {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 536 / 491;
-            overflow: hidden;
-            border-radius: 12px;
-            background: #f5ecd9;
-        }
-
-        .inspiration-image::after {
+        /* Блик сверху кружка — как у глянцевой капли */
+        .color-circle::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 200%;
-            background: linear-gradient(
-                135deg,
-                transparent 0%,
-                transparent 38%,
-                rgba(255, 255, 255, 0.35) 46%,
-                rgba(255, 255, 255, 0.85) 50%,
-                rgba(255, 255, 255, 0.35) 54%,
-                transparent 62%,
-                transparent 100%
-            );
+            top: 12%;
+            left: 18%;
+            width: 40%;
+            height: 26%;
+            border-radius: 50%;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 70%);
             pointer-events: none;
-            z-index: 2;
-            animation: glassShineSweep 10s ease-in-out infinite;
-            mix-blend-mode: screen;
         }
 
-        .inspiration-image img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-            object-position: center center;
-            filter: grayscale(4%) sepia(4%);
-        }
-
-        .corner { position: absolute; width: 28px; height: 28px; pointer-events: none; z-index: 3; }
-        .corner-tl {
-            top: 0;
-            left: 0;
-            border-top: 2px solid var(--accent);
-            border-left: 2px solid var(--accent);
-            border-top-left-radius: 10px;
-            animation: cornerTopLeft 3.5s ease-in-out infinite;
-            transform-origin: top left;
-        }
-        .corner-br {
-            bottom: 0;
-            right: 0;
-            border-bottom: 2px solid var(--accent);
-            border-right: 2px solid var(--accent);
-            border-bottom-right-radius: 10px;
-            animation: cornerBottomRight 3.5s ease-in-out infinite;
-            transform-origin: bottom right;
-        }
+        .color-circle:nth-child(1) { animation-delay: 0s;   background: #f0e6d6; }
+        .color-circle:nth-child(2) { animation-delay: 2.5s; background: #d8c4a8; }
+        .color-circle:nth-child(3) { animation-delay: 5s;   background: #b5c4a4; }
+        .color-circle:nth-child(4) { animation-delay: 7.5s; background: #7d8a5a; }
+        .color-circle:nth-child(5) { animation-delay: 10s;  background: #8b6745; }
+        .color-circle:nth-child(6) { animation-delay: 12.5s; background: #3d3027; }
 
         /* ============================================
            СЕКЦИЯ 6 — DETAILS
@@ -968,7 +891,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             max-height: 100vh;
         }
 
@@ -1002,25 +925,12 @@
             white-space: nowrap;
         }
 
-        /* КОНТЕЙНЕР ДЛЯ DETAILS — с внутренними отступами от краёв */
-        .details-container {
-            width: 100%;
-            padding: 22px 22px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.55);
-            border: 1px solid rgba(184, 164, 140, 0.22);
-            box-shadow: 0 8px 30px rgba(184, 164, 140, 0.08);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-
+        /* Интро над контейнером (без белого фона) */
         .details-intro {
             font-family: 'Montserrat', sans-serif;
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.5;
             color: var(--text);
             max-width: 440px;
@@ -1029,15 +939,29 @@
             letter-spacing: 0.1px;
         }
 
+        /* Белый контейнер начинается с «Цветы» — более компактный */
+        .details-container {
+            width: 100%;
+            padding: 18px 20px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(184, 164, 140, 0.22);
+            box-shadow: 0 6px 24px rgba(184, 164, 140, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
         .details-block { margin: 0; width: 100%; }
 
         .details-subtitle {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-weight: 500;
-            font-size: 24px;
+            font-size: 21px;
             color: var(--text);
-            margin: 0 0 8px;
+            margin: 0 0 4px;
             letter-spacing: 0.3px;
             position: relative;
             display: inline-block;
@@ -1048,22 +972,21 @@
             content: '';
             position: absolute;
             top: 50%;
-            width: 16px;
+            width: 14px;
             height: 1px;
             background: var(--accent);
             opacity: 0.5;
             transform: translateY(-50%);
         }
-        .details-subtitle::before { left: -24px; }
-        .details-subtitle::after  { right: -24px; }
+        .details-subtitle::before { left: -20px; }
+        .details-subtitle::after  { right: -20px; }
 
-        /* Основной текст Details — без жирного, размер не увеличен */
         .details-text {
             font-family: 'Montserrat', sans-serif;
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
-            line-height: 1.55;
+            font-size: 15px;
+            line-height: 1.5;
             color: var(--text-soft);
             max-width: 480px;
             margin: 0 auto;
@@ -1122,7 +1045,7 @@
             .section-inner { padding: 0 20px; }
         }
 
-        /* === МОБИЛЬНЫЕ: крупный текст, но в один экран === */
+        /* === МОБИЛЬНЫЕ === */
         @media (max-width: 480px) {
             .fullscreen-section { padding: 28px 0; }
             .section-inner { padding: 0 16px; }
@@ -1138,7 +1061,7 @@
             .greeting h1 { font-size: 34px; margin-bottom: 16px; letter-spacing: 1px; }
             .greeting h1::before,
             .greeting h1::after { display: none; }
-            .greeting p { font-size: 19px; line-height: 1.55; }
+            .greeting p { font-size: 20px; line-height: 1.55; }
 
             /* Календарь */
             .calendar-card { padding: 24px 14px 22px; border-radius: 18px; }
@@ -1151,7 +1074,7 @@
             .date-wrap span { font-size: 21px; }
             .heart-svg { width: 50px; height: 50px; }
 
-            /* Локация — приподняли заголовок, "for you" ниже, но не на карточке */
+            /* Локация */
             .where-header { margin-bottom: 64px; }
             .where-title { font-size: 54px; }
             .where-for-you { font-size: 44px; right: -22px; bottom: -20px; }
@@ -1163,7 +1086,7 @@
             .address-place { font-size: 19px; margin-bottom: 24px; }
             .map-hint { padding: 15px 26px; font-size: 13px; letter-spacing: 1.8px; }
 
-            /* Тайминг — приподняли заголовок */
+            /* Тайминг */
             .timeline-header { margin-bottom: 64px; }
             .timeline-title { font-size: 54px; }
             .timeline-for-you { font-size: 44px; right: -22px; bottom: -20px; }
@@ -1180,26 +1103,20 @@
             .dresscode-thankyou { font-size: 34px; right: -16px; bottom: -32px; }
             .dresscode-divider { margin-top: 20px; }
             .dresscode-subtitle { font-size: 16px; line-height: 1.55; }
-            .color-palette { gap: 10px; margin-top: 8px; }
-            .color-heart { width: 38px; height: 38px; }
-            .inspiration-title { font-size: 13px; margin: 14px 0 8px; letter-spacing: 4px; }
-            .inspiration-wrapper { padding: 8px; max-width: 400px; }
+            .color-circles { gap: 12px; margin-top: 16px; }
+            .color-circle { width: 52px; height: 52px; }
 
-            .corner { width: 22px; height: 22px; }
-            .corner-tl { border-top-left-radius: 8px; }
-            .corner-br { border-bottom-right-radius: 8px; }
-
-            /* Details — размер не меняем, добавлен контейнер */
+            /* Details */
             .details-section { padding: 0 0 14px; }
             .details-title { font-size: 36px; }
             .details-signature { font-size: 24px; right: -14px; bottom: -20px; }
             .details-header { margin-bottom: 8px; }
-            .details-container { padding: 18px 16px; border-radius: 16px; gap: 10px; }
-            .details-intro { font-size: 16px; line-height: 1.5; }
-            .details-subtitle { font-size: 24px; margin-bottom: 6px; }
-            .details-subtitle::before { left: -20px; width: 12px; }
-            .details-subtitle::after { right: -20px; width: 12px; }
-            .details-text { font-size: 16px; line-height: 1.55; }
+            .details-intro { font-size: 15px; line-height: 1.5; }
+            .details-container { padding: 16px 16px; border-radius: 14px; gap: 5px; }
+            .details-subtitle { font-size: 20px; margin-bottom: 3px; }
+            .details-subtitle::before { left: -18px; width: 10px; }
+            .details-subtitle::after { right: -18px; width: 10px; }
+            .details-text { font-size: 15px; line-height: 1.5; }
             .details-section .section-inner { gap: 8px; }
 
             .footer-text { font-size: 38px; margin-top: 22px; }
@@ -1210,7 +1127,7 @@
             .fullscreen-section { padding: 20px 0; }
             .greeting { margin-bottom: 18px; }
             .greeting h1 { font-size: 30px; }
-            .greeting p { font-size: 18px; line-height: 1.5; }
+            .greeting p { font-size: 19px; line-height: 1.5; }
             .calendar-card { padding: 20px 10px 18px; }
             .calendar-month { font-size: 28px; letter-spacing: 4px; margin-bottom: 18px; }
             .calendar-day { font-size: 18px; height: 36px; }
@@ -1232,11 +1149,11 @@
             .dresscode-title { font-size: 26px; }
             .dresscode-thankyou { font-size: 30px; right: -12px; bottom: -28px; }
             .dresscode-subtitle { font-size: 15px; }
-            .color-heart { width: 34px; height: 34px; }
+            .color-circle { width: 46px; height: 46px; }
 
             .details-title { font-size: 32px; }
             .details-signature { font-size: 20px; right: -12px; bottom: -18px; }
-            .details-container { padding: 16px 14px; }
+            .details-container { padding: 14px 14px; }
         }
 
         /* Планшеты и ПК — уменьшенный вертикальный вьюпорт */
@@ -1246,22 +1163,17 @@
             .dresscode-thankyou { font-size: 34px; bottom: -36px; }
             .dresscode-divider { margin-top: 22px; }
             .dresscode-subtitle { font-size: 15px; line-height: 1.5; }
-            .color-heart { width: 36px; height: 36px; }
-            .color-palette { gap: 10px; margin-top: 6px; }
-            .inspiration-title { font-size: 12px; margin-top: 10px; margin-bottom: 6px; }
-            .inspiration-wrapper { max-width: 460px; padding: 8px; }
-            .corner { width: 24px; height: 24px; }
-            .corner-tl { border-top-left-radius: 8px; }
-            .corner-br { border-bottom-right-radius: 8px; }
+            .color-circle { width: 50px; height: 50px; }
+            .color-circles { gap: 14px; margin-top: 14px; }
 
             .details-section { padding: 0 0 18px; }
             .details-title { font-size: 40px; }
             .details-signature { font-size: 26px; bottom: -20px; right: -16px; }
             .details-header { margin-bottom: 8px; }
-            .details-container { padding: 20px 20px; gap: 10px; }
-            .details-intro { font-size: 16px; line-height: 1.5; }
-            .details-subtitle { font-size: 22px; margin-bottom: 6px; }
-            .details-text { font-size: 16px; line-height: 1.55; }
+            .details-container { padding: 16px 20px; gap: 5px; }
+            .details-intro { font-size: 15px; line-height: 1.5; }
+            .details-subtitle { font-size: 20px; margin-bottom: 3px; }
+            .details-text { font-size: 15px; line-height: 1.5; }
         }
 
         @media (max-height: 700px) and (min-width: 481px) {
@@ -1295,24 +1207,19 @@
             .dresscode-thankyou { font-size: 28px; bottom: -28px; right: -14px; }
             .dresscode-divider { margin-top: 16px; }
             .dresscode-subtitle { font-size: 14px; line-height: 1.4; }
-            .color-heart { width: 30px; height: 30px; }
-            .color-palette { gap: 6px; margin-top: 4px; padding: 2px; }
-            .inspiration-title { font-size: 10px; margin: 6px 0 4px; letter-spacing: 3px; }
-            .inspiration-wrapper { padding: 6px; max-width: 320px; }
-            .corner { width: 20px; height: 20px; }
-            .corner-tl { border-top-left-radius: 8px; }
-            .corner-br { border-bottom-right-radius: 8px; }
+            .color-circle { width: 40px; height: 40px; }
+            .color-circles { gap: 10px; margin-top: 12px; }
 
             .details-section { padding: 0 0 10px; }
             .details-title { font-size: 32px; }
             .details-signature { font-size: 22px; bottom: -18px; right: -14px; }
             .details-header { margin-bottom: 6px; }
-            .details-container { padding: 16px 16px; gap: 8px; }
-            .details-intro { font-size: 15px; line-height: 1.45; }
-            .details-subtitle { font-size: 20px; margin-bottom: 4px; }
-            .details-subtitle::before { left: -18px; width: 10px; }
-            .details-subtitle::after { right: -18px; width: 10px; }
-            .details-text { font-size: 15px; line-height: 1.5; }
+            .details-container { padding: 14px 16px; gap: 4px; }
+            .details-intro { font-size: 14px; line-height: 1.4; }
+            .details-subtitle { font-size: 18px; margin-bottom: 2px; }
+            .details-subtitle::before { left: -16px; width: 10px; }
+            .details-subtitle::after { right: -16px; width: 10px; }
+            .details-text { font-size: 14px; line-height: 1.5; }
         }
 
         @media (min-width: 1400px) {
@@ -1327,8 +1234,7 @@
             }
             .hero-bg, .hero-content { transform: none !important; }
             .map-hint { animation: none !important; }
-            .color-heart { animation: none !important; }
-            .inspiration-image::after { animation: none !important; opacity: 0 !important; }
+            .color-circle { animation: none !important; }
         }
     </style>
 </head>
@@ -1561,134 +1467,14 @@
 
             <p class="dresscode-subtitle">Для нас главное — ваше присутствие!<br>Но мы будем рады, если в своих нарядах<br>вы поддержите цветовую гамму нашей свадьбы.</p>
 
-            <div class="color-palette">
-
-                <div class="color-heart">
-                    <svg viewBox="0 0 100 100">
-                        <defs>
-                            <radialGradient id="hg1" cx="35%" cy="30%" r="75%">
-                                <stop offset="0%" stop-color="#fbf3e3"/>
-                                <stop offset="45%" stop-color="#f0e6d6"/>
-                                <stop offset="100%" stop-color="#c4b198"/>
-                            </radialGradient>
-                        </defs>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="url(#hg1)"/>
-                        <ellipse cx="34" cy="30" rx="11" ry="7" fill="rgba(255,255,255,0.55)" transform="rotate(-25 34 30)"/>
-                        <ellipse cx="30" cy="37" rx="5" ry="3" fill="rgba(255,255,255,0.4)" transform="rotate(-25 30 37)"/>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
-                    </svg>
-                </div>
-
-                <div class="color-heart">
-                    <svg viewBox="0 0 100 100">
-                        <defs>
-                            <radialGradient id="hg2" cx="35%" cy="30%" r="75%">
-                                <stop offset="0%" stop-color="#f0d9b6"/>
-                                <stop offset="45%" stop-color="#e0c8a6"/>
-                                <stop offset="100%" stop-color="#b3946e"/>
-                            </radialGradient>
-                        </defs>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="url(#hg2)"/>
-                        <ellipse cx="34" cy="30" rx="11" ry="7" fill="rgba(255,255,255,0.6)" transform="rotate(-25 34 30)"/>
-                        <ellipse cx="30" cy="37" rx="5" ry="3" fill="rgba(255,255,255,0.4)" transform="rotate(-25 30 37)"/>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
-                    </svg>
-                </div>
-
-                <div class="color-heart">
-                    <svg viewBox="0 0 100 100">
-                        <defs>
-                            <radialGradient id="hg3" cx="35%" cy="30%" r="75%">
-                                <stop offset="0%" stop-color="#cbd7ba"/>
-                                <stop offset="45%" stop-color="#b5c4a4"/>
-                                <stop offset="100%" stop-color="#899a78"/>
-                            </radialGradient>
-                        </defs>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="url(#hg3)"/>
-                        <ellipse cx="34" cy="30" rx="11" ry="7" fill="rgba(255,255,255,0.55)" transform="rotate(-25 34 30)"/>
-                        <ellipse cx="30" cy="37" rx="5" ry="3" fill="rgba(255,255,255,0.35)" transform="rotate(-25 30 37)"/>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
-                    </svg>
-                </div>
-
-                <div class="color-heart">
-                    <svg viewBox="0 0 100 100">
-                        <defs>
-                            <radialGradient id="hg4" cx="35%" cy="30%" r="75%">
-                                <stop offset="0%" stop-color="#8b9a62"/>
-                                <stop offset="45%" stop-color="#6e7a4a"/>
-                                <stop offset="100%" stop-color="#4a5530"/>
-                            </radialGradient>
-                        </defs>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="url(#hg4)"/>
-                        <ellipse cx="34" cy="30" rx="11" ry="7" fill="rgba(255,255,255,0.5)" transform="rotate(-25 34 30)"/>
-                        <ellipse cx="30" cy="37" rx="5" ry="3" fill="rgba(255,255,255,0.3)" transform="rotate(-25 30 37)"/>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
-                    </svg>
-                </div>
-
-                <div class="color-heart">
-                    <svg viewBox="0 0 100 100">
-                        <defs>
-                            <radialGradient id="hg5" cx="35%" cy="30%" r="75%">
-                                <stop offset="0%" stop-color="#b6a190"/>
-                                <stop offset="45%" stop-color="#9a8270"/>
-                                <stop offset="100%" stop-color="#6d5a49"/>
-                            </radialGradient>
-                        </defs>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="url(#hg5)"/>
-                        <ellipse cx="34" cy="30" rx="11" ry="7" fill="rgba(255,255,255,0.5)" transform="rotate(-25 34 30)"/>
-                        <ellipse cx="30" cy="37" rx="5" ry="3" fill="rgba(255,255,255,0.3)" transform="rotate(-25 30 37)"/>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
-                    </svg>
-                </div>
-
-                <div class="color-heart">
-                    <svg viewBox="0 0 100 100">
-                        <defs>
-                            <radialGradient id="hg6" cx="35%" cy="30%" r="75%">
-                                <stop offset="0%" stop-color="#8b6745"/>
-                                <stop offset="45%" stop-color="#6b4a30"/>
-                                <stop offset="100%" stop-color="#432c1a"/>
-                            </radialGradient>
-                        </defs>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="url(#hg6)"/>
-                        <ellipse cx="34" cy="30" rx="11" ry="7" fill="rgba(255,255,255,0.45)" transform="rotate(-25 34 30)"/>
-                        <ellipse cx="30" cy="37" rx="5" ry="3" fill="rgba(255,255,255,0.25)" transform="rotate(-25 30 37)"/>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
-                    </svg>
-                </div>
-
-                <div class="color-heart">
-                    <svg viewBox="0 0 100 100">
-                        <defs>
-                            <radialGradient id="hg7" cx="35%" cy="30%" r="75%">
-                                <stop offset="0%" stop-color="#5f4d40"/>
-                                <stop offset="45%" stop-color="#3d3027"/>
-                                <stop offset="100%" stop-color="#1f1611"/>
-                            </radialGradient>
-                        </defs>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="url(#hg7)"/>
-                        <ellipse cx="34" cy="30" rx="11" ry="7" fill="rgba(255,255,255,0.35)" transform="rotate(-25 34 30)"/>
-                        <ellipse cx="30" cy="37" rx="5" ry="3" fill="rgba(255,255,255,0.2)" transform="rotate(-25 30 37)"/>
-                        <path d="M 50 88 C 50 88, 10 60, 10 34 C 10 17, 24 8, 37 8 C 44 8, 49 13, 50 20 C 51 13, 56 8, 63 8 C 76 8, 90 17, 90 34 C 90 60, 50 88, 50 88 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-                    </svg>
-                </div>
-
-            </div>
-
-            <div class="inspiration-title">Вдохновение</div>
-
-            <div class="inspiration-wrapper">
-                <span class="corner corner-tl"></span>
-                <span class="corner corner-br"></span>
-
-                <div class="inspiration-image">
-                    <img 
-                        src="https://sun9-82.vkuserphoto.ru/s/v1/ig2/UEOaYoVc_Kpi6MzOBNyLZaV2CPo475xSj1jR-rp7vuYXv6O9cg07zrjNdxnhhTJA3F1lKTsuPk1Js9vxTZ2PAHDi.jpg?quality=95&as=32x29,48x44,72x66,108x99,160x147,240x220,360x330,480x440,536x491&from=bu&u=d7BXKp0rS3ufqaG5rWjt-zffuIArN-9JyXk_7YbJ5z4&cs=536x0" 
-                        alt="Вдохновение — образы для дресс-кода" 
-                        loading="lazy">
-                </div>
+            <!-- 6 КРУЖКОВ С ЦВЕТАМИ ГАММЫ -->
+            <div class="color-circles">
+                <div class="color-circle"></div>
+                <div class="color-circle"></div>
+                <div class="color-circle"></div>
+                <div class="color-circle"></div>
+                <div class="color-circle"></div>
+                <div class="color-circle"></div>
             </div>
         </div>
         <div class="scroll-indicator"><span>Далее</span></div>
@@ -1703,9 +1489,9 @@
                 <span class="details-signature">thank you</span>
             </div>
 
-            <div class="details-container">
-                <p class="details-intro">Мы догадываемся, что после получения приглашения у Вас может появиться ряд вопросов:</p>
+            <p class="details-intro">Мы догадываемся, что после получения приглашения у вас может появиться ряд вопросов:</p>
 
+            <div class="details-container">
                 <div class="details-block">
                     <h3 class="details-subtitle">Цветы</h3>
                     <p class="details-text">Букеты прекрасны, но, к сожалению, быстро увядают. Мы будем искренне рады, если вместо цветов вы подарите нам алкоголь (мы предпочитаем: ликёрное вино, виски или коньяк). А если на бутылке будет ваше пожелание или дата особого события — мы обязательно откроем её именно в этот день!</p>
