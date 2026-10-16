@@ -163,7 +163,7 @@
             }
             .music-btn { width: 44px; height: 44px; }
             .music-label { max-width: 110px; }
-            .music-title { font-size: 11px; }
+            .music-title { font-size: 12px; }
         }
         @media (max-width: 380px) {
             .music-label { display: none; }
@@ -264,8 +264,8 @@
 
         .hero-date {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(13px, 2.4vw, 16px);
-            font-weight: 300;
+            font-size: clamp(14px, 2.6vw, 16px);
+            font-weight: 400;
             letter-spacing: 8px;
             color: #fdfbf8;
             text-shadow: 0 2px 12px rgba(74, 64, 56, 0.5);
@@ -284,10 +284,10 @@
             align-items: center;
             gap: 10px;
             color: var(--text-soft);
-            font-size: 9px;
+            font-size: 10px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            opacity: 0.6;
+            opacity: 0.65;
             animation: floatSoftDown 2.8s ease-in-out infinite;
             pointer-events: none;
         }
@@ -347,24 +347,12 @@
             100% { transform: scale(1); }
         }
         @keyframes cornerTopLeft {
-            0%, 100% { 
-                transform: translate(0, 0); 
-                opacity: 0.75;
-            }
-            50% { 
-                transform: translate(-6px, -6px); 
-                opacity: 1;
-            }
+            0%, 100% { transform: translate(0, 0); opacity: 0.75; }
+            50% { transform: translate(-6px, -6px); opacity: 1; }
         }
         @keyframes cornerBottomRight {
-            0%, 100% { 
-                transform: translate(0, 0); 
-                opacity: 0.75;
-            }
-            50% { 
-                transform: translate(6px, 6px); 
-                opacity: 1;
-            }
+            0%, 100% { transform: translate(0, 0); opacity: 0.75; }
+            50% { transform: translate(6px, 6px); opacity: 1; }
         }
         @keyframes glassShineSweep {
             0%   { transform: translate3d(-120%, -120%, 0); }
@@ -469,9 +457,9 @@
         .greeting p {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-weight: 400;
-            font-size: clamp(17px, 3.6vw, 21px);
-            line-height: 1.7;
+            font-weight: 500;
+            font-size: clamp(18px, 3.8vw, 21px);
+            line-height: 1.6;
             color: var(--text-soft);
             letter-spacing: 0.4px;
             max-width: 420px;
@@ -489,7 +477,7 @@
         }
         .calendar-month {
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 300;
+            font-weight: 400;
             font-size: 38px;
             letter-spacing: 9px;
             text-transform: uppercase;
@@ -518,9 +506,9 @@
         }
         .calendar-day-name {
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            font-weight: 400;
-            letter-spacing: 1.5px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1px;
             text-transform: lowercase;
             color: var(--text-light);
             padding-bottom: 8px;
@@ -529,7 +517,7 @@
         .calendar-day {
             font-family: 'Cormorant Garamond', serif;
             font-size: 20px;
-            font-weight: 400;
+            font-weight: 500;
             color: var(--text);
             height: 42px;
             display: flex;
@@ -538,7 +526,7 @@
             position: relative;
         }
         .calendar-day.other-month { color: var(--text-light); opacity: 0.45; }
-        .calendar-day.highlighted { position: relative; z-index: 2; color: var(--text); font-weight: 500; }
+        .calendar-day.highlighted { position: relative; z-index: 2; color: var(--text); font-weight: 600; }
 
         .date-wrap {
             position: relative;
@@ -653,7 +641,6 @@
             text-shadow: 0 2px 10px rgba(184, 164, 140, 0.2);
         }
 
-        /* ----- FLIP-КАРТА (без preserve-3d — текст чёткий) ----- */
         .flip-container {
             perspective: 1600px;
             width: 100%;
@@ -726,11 +713,12 @@
         }
         .address-label {
             display: block;
-            font-size: 10px;
+            font-size: 11px;
             letter-spacing: 5px;
             text-transform: uppercase;
             color: var(--text-light);
             margin-bottom: 18px;
+            font-weight: 500;
         }
         .address-venue {
             font-family: 'Playfair Display', serif;
@@ -756,7 +744,8 @@
         .address-place {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 19px;
+            font-size: 20px;
+            font-weight: 500;
             color: var(--text-soft);
             letter-spacing: 0.5px;
             margin-bottom: 26px;
@@ -936,7 +925,7 @@
         .timeline-content { padding-left: 10px; }
         .timeline-content strong {
             display: block;
-            font-size: 16px;
+            font-size: 17px;
             margin-bottom: 6px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
@@ -946,7 +935,8 @@
         .timeline-content p {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 17px;
+            font-weight: 500;
+            font-size: 18px;
             color: var(--text-soft);
             line-height: 1.5;
             margin-bottom: 0;
@@ -1033,12 +1023,12 @@
         .dresscode-subtitle {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-weight: 400;
-            font-size: clamp(13px, 3vw, 16px);
-            line-height: 1.5;
+            font-weight: 500;
+            font-size: clamp(14px, 3.2vw, 16px);
+            line-height: 1.55;
             color: var(--text-soft);
-            letter-spacing: 0.4px;
-            max-width: 400px;
+            letter-spacing: 0.3px;
+            max-width: 420px;
             margin: 4px 0 0;
             text-align: center;
         }
@@ -1056,8 +1046,8 @@
 
         .color-heart {
             flex: 0 0 auto;
-            width: clamp(34px, 8.5vw, 54px);
-            height: clamp(34px, 8.5vw, 54px);
+            width: clamp(36px, 9vw, 54px);
+            height: clamp(36px, 9vw, 54px);
             position: relative;
             cursor: pointer;
             transform-origin: center center;
@@ -1088,8 +1078,8 @@
             margin-bottom: 6px;
             color: var(--text-soft);
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            font-weight: 400;
+            font-size: 11px;
+            font-weight: 500;
             letter-spacing: 5px;
             text-transform: uppercase;
         }
@@ -1192,7 +1182,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             max-height: 100vh;
         }
 
@@ -1231,17 +1221,18 @@
             white-space: nowrap;
         }
 
+        /* Интро — читабельный шрифт */
         .details-intro {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-weight: 500;
-            font-size: clamp(16px, 3.8vw, 20px);
-            line-height: 1.45;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: clamp(15px, 3.6vw, 17px);
+            line-height: 1.55;
             color: var(--text);
-            max-width: 420px;
+            max-width: 440px;
             margin: 0 auto 4px;
             text-align: center;
-            letter-spacing: 0.2px;
+            letter-spacing: 0.1px;
         }
 
         .details-block {
@@ -1252,9 +1243,9 @@
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-weight: 500;
-            font-size: clamp(21px, 4.7vw, 27px);
+            font-size: clamp(22px, 5vw, 27px);
             color: var(--text);
-            margin: 0 0 6px;
+            margin: 0 0 8px;
             letter-spacing: 0.3px;
             position: relative;
             display: inline-block;
@@ -1274,14 +1265,15 @@
         .details-subtitle::before { left: -24px; }
         .details-subtitle::after  { right: -24px; }
 
+        /* Основной текст Details — читабельный, не рукописный */
         .details-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-weight: 500;
-            font-size: clamp(17px, 4vw, 20px);
-            line-height: 1.55;
-            color: var(--text);
-            max-width: 460px;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: clamp(15px, 3.8vw, 17px);
+            line-height: 1.6;
+            color: var(--text-soft);
+            max-width: 480px;
             margin: 0 auto;
             text-align: center;
             letter-spacing: 0.1px;
@@ -1291,7 +1283,7 @@
         .details-text strong {
             font-weight: 600;
             color: var(--text);
-            font-style: italic;
+            font-style: normal;
         }
 
         /* ============================================
@@ -1322,7 +1314,7 @@
         .footer-text {
             margin-top: 30px;
             font-family: 'Great Vibes', cursive;
-            font-size: 36px;
+            font-size: 40px;
             color: var(--text);
             text-align: center;
             letter-spacing: 2px;
@@ -1381,81 +1373,78 @@
             .section-inner { padding: 0 20px; }
         }
 
-        /* === ГЛАВНОЕ ИСПРАВЛЕНИЕ ДЛЯ МОБИЛЬНЫХ ===
-           Делаем контент компактнее, чтобы секция реально
-           умещалась в один экран, и не было видно кусков
-           соседних блоков. */
+        /* === МОБИЛЬНЫЕ: секции в один экран, но шрифт крупный и читабельный === */
         @media (max-width: 480px) {
-            .fullscreen-section { padding: 16px 0; }
-            .section-inner { padding: 0 16px; }
+            .fullscreen-section { padding: 24px 0; }
+            .section-inner { padding: 0 18px; }
 
             .hero { min-height: 520px; }
-            .hero-date { letter-spacing: 5px; margin-bottom: 30px; }
-            .scroll-indicator { bottom: 12px; font-size: 8px; letter-spacing: 2px; }
-            .scroll-indicator::after { height: 20px; }
+            .hero-date { font-size: 14px; letter-spacing: 6px; margin-bottom: 30px; }
+            .scroll-indicator { bottom: 16px; font-size: 10px; letter-spacing: 2px; }
+            .scroll-indicator::after { height: 22px; }
 
             /* Приветствие */
-            .greeting { margin-bottom: 16px; }
+            .greeting { margin-bottom: 20px; }
             .greeting::before { display: none; }
             .greeting h1 {
-                font-size: clamp(26px, 6.5vw, 32px);
-                margin-bottom: 10px;
+                font-size: 32px;
+                margin-bottom: 14px;
                 letter-spacing: 1px;
             }
             .greeting h1::before,
             .greeting h1::after { display: none; }
             .greeting p {
-                font-size: 15px;
-                line-height: 1.5;
+                font-size: 17px;
+                line-height: 1.55;
             }
 
-            /* Календарь — компактнее */
-            .calendar-card { padding: 18px 10px 16px; border-radius: 18px; }
+            /* Календарь */
+            .calendar-card { padding: 22px 14px 20px; border-radius: 18px; }
             .calendar-month {
-                font-size: 24px;
-                letter-spacing: 4px;
-                margin-bottom: 14px;
+                font-size: 30px;
+                letter-spacing: 5px;
+                margin-bottom: 20px;
             }
-            .calendar-month::after { bottom: -8px; width: 36px; }
-            .calendar-grid { gap: 2px 1px; }
-            .calendar-day-name { font-size: 9px; padding-bottom: 4px; letter-spacing: 1px; }
-            .calendar-day { font-size: 15px; height: 30px; }
-            .date-wrap { width: 30px; height: 30px; }
-            .date-wrap span { font-size: 16px; }
-            .heart-svg { width: 40px; height: 40px; }
+            .calendar-month::after { bottom: -10px; width: 40px; }
+            .calendar-grid { gap: 3px 1px; }
+            .calendar-day-name { font-size: 11px; padding-bottom: 6px; letter-spacing: 0.5px; }
+            .calendar-day { font-size: 18px; height: 36px; }
+            .date-wrap { width: 36px; height: 36px; }
+            .date-wrap span { font-size: 19px; }
+            .heart-svg { width: 48px; height: 48px; }
 
             /* Локация */
             .where-header { margin-bottom: 30px; }
-            .where-title { font-size: 50px; }
-            .where-for-you { font-size: 40px; right: -22px; bottom: -32px; }
+            .where-title { font-size: 52px; }
+            .where-for-you { font-size: 42px; right: -22px; bottom: -32px; }
 
-            .flip-front { padding: 30px 20px 26px; min-height: 320px; }
-            .address-top-line { margin-bottom: 16px; }
-            .address-label { font-size: 9px; letter-spacing: 4px; margin-bottom: 14px; }
-            .address-venue { font-size: 24px; margin-bottom: 10px; padding-bottom: 10px; }
-            .address-place { font-size: 16px; margin-bottom: 20px; }
-            .map-hint { padding: 13px 22px; font-size: 11px; letter-spacing: 1.5px; }
+            .flip-front { padding: 32px 22px 28px; min-height: 340px; }
+            .address-top-line { margin-bottom: 18px; }
+            .address-label { font-size: 11px; letter-spacing: 4px; margin-bottom: 16px; }
+            .address-venue { font-size: 26px; margin-bottom: 12px; padding-bottom: 10px; }
+            .address-place { font-size: 18px; margin-bottom: 22px; }
+            .map-hint { padding: 14px 24px; font-size: 12px; letter-spacing: 1.8px; }
 
             /* Тайминг */
             .timeline-header { margin-bottom: 30px; }
-            .timeline-title { font-size: 50px; }
-            .timeline-for-you { font-size: 40px; right: -22px; bottom: -32px; }
-            .timeline { padding-left: 34px; }
-            .timeline::before { left: 13px; }
-            .timeline-icon { left: -34px; width: 28px; height: 28px; font-size: 12px; }
-            .timeline-content strong { font-size: 14px; margin-bottom: 4px; }
-            .timeline-content p { font-size: 15px; line-height: 1.45; }
-            .timeline-item { margin-bottom: 24px; }
+            .timeline-title { font-size: 52px; }
+            .timeline-for-you { font-size: 42px; right: -22px; bottom: -32px; }
+            .timeline { padding-left: 38px; }
+            .timeline::before { left: 14px; }
+            .timeline-icon { left: -38px; width: 30px; height: 30px; font-size: 13px; }
+            .timeline-content strong { font-size: 16px; margin-bottom: 5px; }
+            .timeline-content p { font-size: 17px; line-height: 1.5; }
+            .timeline-item { margin-bottom: 28px; }
 
             /* Dress-code */
-            .dresscode-section { padding: 8px 0; }
-            .dresscode-title { font-size: 24px; letter-spacing: 4px; }
-            .dresscode-thankyou { font-size: 30px; right: -14px; bottom: -28px; }
-            .dresscode-divider { margin-top: 16px; }
-            .dresscode-subtitle { font-size: 12px; line-height: 1.4; }
-            .color-palette { gap: 6px; margin-top: 4px; }
-            .color-heart { width: 30px; height: 30px; }
-            .inspiration-title { font-size: 9px; margin: 6px 0 4px; letter-spacing: 4px; }
+            .dresscode-section { padding: 12px 0; }
+            .dresscode-title { font-size: 26px; letter-spacing: 4px; }
+            .dresscode-thankyou { font-size: 32px; right: -16px; bottom: -30px; }
+            .dresscode-divider { margin-top: 18px; }
+            .dresscode-subtitle { font-size: 15px; line-height: 1.5; }
+            .color-palette { gap: 8px; margin-top: 6px; }
+            .color-heart { width: 34px; height: 34px; }
+            .inspiration-title { font-size: 11px; margin: 8px 0 6px; letter-spacing: 4px; }
             .inspiration-wrapper { padding: 8px; max-width: 400px; }
 
             .corner { width: 22px; height: 22px; }
@@ -1463,53 +1452,57 @@
             .corner-br { border-bottom-right-radius: 8px; }
 
             /* Details */
-            .details-section { padding: 0 0 12px; }
-            .details-title { font-size: 34px; }
-            .details-signature { font-size: 22px; right: -12px; bottom: -18px; }
+            .details-section { padding: 0 0 14px; }
+            .details-title { font-size: 36px; }
+            .details-signature { font-size: 24px; right: -14px; bottom: -20px; }
             .details-header { margin-bottom: 12px; }
-            .details-intro { font-size: 15px; line-height: 1.4; }
-            .details-subtitle { font-size: 19px; margin-bottom: 4px; }
-            .details-subtitle::before { left: -18px; width: 10px; }
-            .details-subtitle::after { right: -18px; width: 10px; }
-            .details-text { font-size: 15px; line-height: 1.5; }
-            .details-section .section-inner { gap: 6px; }
+            .details-intro { font-size: 16px; line-height: 1.5; }
+            .details-subtitle { font-size: 22px; margin-bottom: 6px; }
+            .details-subtitle::before { left: -20px; width: 12px; }
+            .details-subtitle::after { right: -20px; width: 12px; }
+            .details-text { font-size: 16px; line-height: 1.55; }
+            .details-section .section-inner { gap: 8px; }
 
-            .footer-text { font-size: 28px; margin-top: 20px; }
-            .arch-image { max-width: 260px; }
+            .footer-text { font-size: 34px; margin-top: 22px; }
+            .arch-image { max-width: 280px; }
         }
 
         @media (max-width: 360px) {
-            .fullscreen-section { padding: 12px 0; }
-            .greeting { margin-bottom: 12px; }
-            .greeting h1 { font-size: 24px; }
-            .greeting p { font-size: 14px; }
-            .calendar-card { padding: 14px 8px 12px; }
-            .calendar-month { font-size: 22px; letter-spacing: 3px; margin-bottom: 12px; }
-            .calendar-day { font-size: 14px; height: 28px; }
-            .date-wrap { width: 28px; height: 28px; }
-            .date-wrap span { font-size: 15px; }
-            .heart-svg { width: 36px; height: 36px; }
-            .calendar-day-name { font-size: 8px; }
+            .fullscreen-section { padding: 18px 0; }
+            .greeting { margin-bottom: 16px; }
+            .greeting h1 { font-size: 28px; }
+            .greeting p { font-size: 16px; line-height: 1.5; }
+            .calendar-card { padding: 18px 10px 16px; }
+            .calendar-month { font-size: 26px; letter-spacing: 4px; margin-bottom: 16px; }
+            .calendar-day { font-size: 16px; height: 32px; }
+            .date-wrap { width: 32px; height: 32px; }
+            .date-wrap span { font-size: 17px; }
+            .heart-svg { width: 42px; height: 42px; }
+            .calendar-day-name { font-size: 10px; }
 
-            .where-title { font-size: 44px; }
-            .where-for-you { font-size: 34px; right: -16px; bottom: -28px; }
+            .where-title { font-size: 46px; }
+            .where-for-you { font-size: 36px; right: -18px; bottom: -28px; }
 
-            .timeline-title { font-size: 44px; }
-            .timeline-for-you { font-size: 34px; right: -16px; bottom: -28px; }
+            .timeline-title { font-size: 46px; }
+            .timeline-for-you { font-size: 36px; right: -18px; bottom: -28px; }
+            .timeline-content strong { font-size: 15px; }
+            .timeline-content p { font-size: 16px; }
 
-            .dresscode-thankyou { font-size: 26px; right: -10px; bottom: -24px; }
-            .color-heart { width: 26px; height: 26px; }
+            .dresscode-thankyou { font-size: 28px; right: -12px; bottom: -26px; }
+            .color-heart { width: 30px; height: 30px; }
 
-            .details-title { font-size: 30px; }
-            .details-signature { font-size: 18px; right: -10px; bottom: -16px; }
+            .details-title { font-size: 32px; }
+            .details-signature { font-size: 20px; right: -12px; bottom: -18px; }
+            .details-text { font-size: 15px; }
         }
 
+        /* Планшеты и ПК — уменьшенный вертикальный вьюпорт */
         @media (max-height: 800px) and (min-width: 481px) {
             .dresscode-section { padding: 16px 0; }
             .dresscode-title { font-size: 26px; }
             .dresscode-thankyou { font-size: 32px; bottom: -34px; }
             .dresscode-divider { margin-top: 20px; }
-            .dresscode-subtitle { font-size: 12px; line-height: 1.4; }
+            .dresscode-subtitle { font-size: 13px; line-height: 1.4; }
             .color-heart { width: 32px; height: 32px; }
             .color-palette { gap: 8px; margin-top: 4px; }
             .inspiration-title { font-size: 9px; margin-top: 6px; margin-bottom: 4px; }
@@ -1522,9 +1515,9 @@
             .details-title { font-size: 36px; }
             .details-signature { font-size: 24px; bottom: -20px; right: -16px; }
             .details-header { margin-bottom: 14px; }
-            .details-intro { font-size: 16px; line-height: 1.4; }
+            .details-intro { font-size: 15px; line-height: 1.45; }
             .details-subtitle { font-size: 20px; margin-bottom: 5px; }
-            .details-text { font-size: 16px; line-height: 1.5; }
+            .details-text { font-size: 15px; line-height: 1.55; }
             .details-section .section-inner { gap: 8px; }
         }
 
@@ -1532,7 +1525,7 @@
             .fullscreen-section { padding: 20px 0; }
             .greeting { margin-bottom: 22px; }
             .greeting h1 { font-size: 30px; margin-bottom: 14px; }
-            .greeting p { font-size: 16px; }
+            .greeting p { font-size: 17px; }
             .calendar-card { padding: 24px 16px 20px; }
             .calendar-month { font-size: 28px; margin-bottom: 18px; }
             .calendar-day { font-size: 17px; height: 34px; }
@@ -1546,7 +1539,7 @@
             .where-for-you { font-size: 40px; bottom: -32px; right: -22px; }
             .flip-front { padding: 28px 20px 24px; min-height: 320px; }
             .address-venue { font-size: 22px; }
-            .address-place { font-size: 16px; margin-bottom: 18px; }
+            .address-place { font-size: 17px; margin-bottom: 18px; }
 
             .timeline-header { margin-bottom: 30px; }
             .timeline-title { font-size: 48px; }
@@ -1556,7 +1549,7 @@
             .dresscode-title { font-size: 22px; letter-spacing: 4px; }
             .dresscode-thankyou { font-size: 26px; bottom: -26px; right: -12px; }
             .dresscode-divider { margin-top: 14px; }
-            .dresscode-subtitle { font-size: 10.5px; line-height: 1.3; }
+            .dresscode-subtitle { font-size: 12px; line-height: 1.35; }
             .color-heart { width: 26px; height: 26px; }
             .color-palette { gap: 5px; margin-top: 2px; padding: 2px; }
             .inspiration-title { font-size: 8px; margin: 4px 0 2px; letter-spacing: 3px; }
@@ -1569,11 +1562,11 @@
             .details-title { font-size: 28px; }
             .details-signature { font-size: 20px; bottom: -18px; right: -14px; }
             .details-header { margin-bottom: 12px; }
-            .details-intro { font-size: 14px; line-height: 1.35; }
+            .details-intro { font-size: 14px; line-height: 1.4; }
             .details-subtitle { font-size: 17px; margin-bottom: 3px; }
             .details-subtitle::before { left: -16px; width: 10px; }
             .details-subtitle::after { right: -16px; width: 10px; }
-            .details-text { font-size: 14px; line-height: 1.45; }
+            .details-text { font-size: 14px; line-height: 1.5; }
             .details-section .section-inner { gap: 6px; }
         }
 
@@ -1972,7 +1965,7 @@
 
             <div class="details-block">
                 <h3 class="details-subtitle">Цветы</h3>
-                <p class="details-text">Букеты прекрасны, но, к сожалению, быстро увядают. <strong>Мы будем искренне рады, если вместо цветов Вы преподнесёте нам бутылочку хорошего коньяка или вина</strong>. А если на ней будет Ваше пожелание или дата особого события — <strong>мы обязательно откроем её именно в этот день</strong>!</p>
+                <p class="details-text">Букеты прекрасны, но, к сожалению, быстро увядают. <strong>Мы будем искренне рады, если вместо цветов Вы подарите нам алкоголь</strong> (мы предпочитаем: ликёрное вино, виски или коньяк). А если на бутылке будет Ваше пожелание или дата особого события — <strong>мы обязательно откроем её именно в этот день!</strong></p>
             </div>
 
             <div class="details-block">
@@ -1982,7 +1975,7 @@
 
             <div class="details-block">
                 <h3 class="details-subtitle">Маленькие гости</h3>
-                <p class="details-text">Мы очень любим детей, но хотим в полной мере насладиться праздником. <strong>Поэтому просим Вас прийти без детей</strong>.</p>
+                <p class="details-text">Несмотря на то, что мы очень любим детей, мы хотели бы в полной мере насладиться моментом праздника и хотели бы дать эту возможность и Вам. <strong>Поэтому просим Вас прийти без детей.</strong></p>
             </div>
 
         </div>
