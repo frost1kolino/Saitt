@@ -24,9 +24,7 @@
             overscroll-behavior: none;
         }
 
-        iframe {
-            touch-action: auto;
-        }
+        iframe { touch-action: auto; }
 
         :root {
             --blush:      #f8ede8;
@@ -68,11 +66,7 @@
             transform: translateY(20px);
             pointer-events: none;
         }
-        .music-player.ready {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
+        .music-player.ready { opacity: 1; transform: translateY(0); pointer-events: auto; }
 
         .music-btn {
             position: relative;
@@ -114,26 +108,9 @@
         }
         @keyframes discSpin { to { transform: rotate(360deg); } }
 
-        .music-label {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.15;
-            overflow: hidden;
-            max-width: 160px;
-        }
-        .music-title {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--text);
-            white-space: nowrap;
-        }
-        .music-artist {
-            font-size: 10px;
-            color: var(--text-soft);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
+        .music-label { display: flex; flex-direction: column; line-height: 1.15; overflow: hidden; max-width: 160px; }
+        .music-title { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; }
+        .music-artist { font-size: 10px; color: var(--text-soft); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
 
         .music-tooltip {
             position: absolute;
@@ -151,16 +128,10 @@
             pointer-events: none;
             box-shadow: 0 6px 20px rgba(74, 64, 56, 0.25);
         }
-        .music-player.hint .music-tooltip {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .music-player.hint .music-tooltip { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 520px) {
-            .music-player {
-                bottom: 16px; right: 16px;
-                padding: 6px 14px 6px 6px; gap: 10px;
-            }
+            .music-player { bottom: 16px; right: 16px; padding: 6px 14px 6px 6px; gap: 10px; }
             .music-btn { width: 44px; height: 44px; }
             .music-label { max-width: 110px; }
             .music-title { font-size: 13px; }
@@ -194,9 +165,7 @@
             z-index: 2;
         }
 
-        .section-inner--wide {
-            max-width: 600px;
-        }
+        .section-inner--wide { max-width: 600px; }
 
         /* ============================================
            HERO
@@ -446,14 +415,8 @@
             background: var(--accent);
             opacity: 0.6;
         }
-        .greeting h1::before {
-            left: -44px;
-            transform: translateY(-50%);
-        }
-        .greeting h1::after {
-            right: -44px;
-            transform: translateY(-50%);
-        }
+        .greeting h1::before { left: -44px; transform: translateY(-50%); }
+        .greeting h1::after { right: -44px; transform: translateY(-50%); }
         .greeting p {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
@@ -536,12 +499,7 @@
             align-items: center;
             justify-content: center;
         }
-        .date-wrap span {
-            position: relative;
-            z-index: 2;
-            font-size: 23px;
-            line-height: 1;
-        }
+        .date-wrap span { position: relative; z-index: 2; font-size: 23px; line-height: 1; }
 
         .heart-svg {
             position: absolute;
@@ -556,64 +514,22 @@
             transform-origin: center center;
             overflow: visible;
         }
-        .heart-glow-path {
-            fill: none;
-            stroke: #d8d8d8;
-            stroke-width: 3;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            opacity: 0.55;
-            filter: url(#softBlur);
-        }
-        .heart-path {
-            fill: none;
-            stroke: url(#silverGrad);
-            stroke-width: 1.8;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-dasharray: 200;
-            stroke-dashoffset: 200;
-            animation: heartDraw 1.4s ease 0.5s forwards;
-        }
-        .heart-shine {
-            fill: none;
-            stroke: #ffffff;
-            stroke-width: 2.4;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            stroke-dasharray: 16 220;
-            stroke-dashoffset: 236;
-            opacity: 0.95;
-            animation: shineRun 3s linear infinite 1.8s;
-        }
-        .diamond {
-            fill: none;
-            stroke: url(#silverGrad);
-            stroke-width: 1.1;
-            stroke-linejoin: round;
-            stroke-linecap: round;
-            animation: diamondSparkle 1.8s ease-in-out infinite;
-            transform-origin: center;
-        }
-        .diamond-inner {
-            fill: none;
-            stroke: #e8e8e8;
-            stroke-width: 0.8;
-            stroke-linejoin: round;
-            opacity: 0.9;
-        }
+        .heart-glow-path { fill: none; stroke: #d8d8d8; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; opacity: 0.55; filter: url(#softBlur); }
+        .heart-path { fill: none; stroke: url(#silverGrad); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 200; stroke-dashoffset: 200; animation: heartDraw 1.4s ease 0.5s forwards; }
+        .heart-shine { fill: none; stroke: #ffffff; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 16 220; stroke-dashoffset: 236; opacity: 0.95; animation: shineRun 3s linear infinite 1.8s; }
+        .diamond { fill: none; stroke: url(#silverGrad); stroke-width: 1.1; stroke-linejoin: round; stroke-linecap: round; animation: diamondSparkle 1.8s ease-in-out infinite; transform-origin: center; }
+        .diamond-inner { fill: none; stroke: #e8e8e8; stroke-width: 0.8; stroke-linejoin: round; opacity: 0.9; }
 
         /* ============================================
            СЕКЦИЯ 3 — ЛОКАЦИЯ
            ============================================ */
-        .where-section .section-inner {
-            text-align: center;
-            position: relative;
-        }
+        .where-section .section-inner { text-align: center; position: relative; }
+
+        /* ВАЖНО: увеличен margin-bottom, чтобы "for you" не залезал на карточку */
         .where-header {
             position: relative;
             display: inline-block;
-            margin-bottom: 44px;
+            margin-bottom: 76px;
             padding: 0 10px;
         }
         .where-title {
@@ -633,7 +549,7 @@
             color: var(--text-soft);
             position: absolute;
             right: -34px;
-            bottom: -40px;
+            bottom: -22px;
             transform: rotate(-4deg);
             line-height: 1;
             letter-spacing: -2px;
@@ -647,10 +563,7 @@
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
         }
-        .flip-inner {
-            position: relative;
-            width: 100%;
-        }
+        .flip-inner { position: relative; width: 100%; }
 
         .flip-front {
             position: relative;
@@ -669,9 +582,7 @@
             -webkit-backface-visibility: hidden;
             transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
         }
-        .flip-container.flipped .flip-front {
-            transform: rotateY(180deg);
-        }
+        .flip-container.flipped .flip-front { transform: rotateY(180deg); }
 
         .flip-front::before,
         .flip-front::after {
@@ -681,45 +592,14 @@
             height: 22px;
             border: 1px solid var(--accent);
         }
-        .flip-front::before {
-            top: 12px; left: 12px;
-            border-right: none; border-bottom: none;
-        }
-        .flip-front::after {
-            bottom: 12px; right: 12px;
-            border-left: none; border-top: none;
-        }
+        .flip-front::before { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+        .flip-front::after { bottom: 12px; right: 12px; border-left: none; border-top: none; }
 
-        .address-top-line {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            margin-bottom: 22px;
-            color: var(--text-light);
-        }
+        .address-top-line { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 22px; color: var(--text-light); }
         .address-top-line::before,
-        .address-top-line::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            max-width: 60px;
-        }
-        .address-heart-icon {
-            font-size: 18px;
-            color: var(--accent);
-            animation: pulse 2.5s ease-in-out infinite;
-        }
-        .address-label {
-            display: block;
-            font-size: 12px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--text-light);
-            margin-bottom: 18px;
-            font-weight: 500;
-        }
+        .address-top-line::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); max-width: 60px; }
+        .address-heart-icon { font-size: 18px; color: var(--accent); animation: pulse 2.5s ease-in-out infinite; }
+        .address-label { display: block; font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 18px; font-weight: 500; }
         .address-venue {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -731,25 +611,9 @@
             display: inline-block;
             padding-bottom: 12px;
         }
-        .address-venue::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 0;
-            width: 44px;
-            height: 1px;
-            background: var(--accent);
-        }
-        .address-place {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 21px;
-            font-weight: 500;
-            color: var(--text-soft);
-            letter-spacing: 0.5px;
-            margin-bottom: 26px;
-        }
+        .address-venue::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: 44px; height: 1px; background: var(--accent); }
+        .address-place { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 21px; font-weight: 500; color: var(--text-soft); letter-spacing: 0.5px; margin-bottom: 26px; }
+
         .map-hint {
             display: inline-flex;
             align-items: center;
@@ -773,11 +637,7 @@
             -webkit-tap-highlight-color: transparent;
         }
         .map-hint svg { width: 17px; height: 17px; }
-        .map-hint:active {
-            transform: scale(0.96);
-            background: var(--accent);
-            animation: none;
-        }
+        .map-hint:active { transform: scale(0.96); background: var(--accent); animation: none; }
 
         .flip-back {
             position: absolute;
@@ -795,17 +655,10 @@
             transform: rotateY(-180deg);
             transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
         }
-        .flip-container.flipped .flip-back {
-            transform: rotateY(0deg);
-        }
+        .flip-container.flipped .flip-back { transform: rotateY(0deg); }
 
-        .flip-back iframe {
-            flex: 1;
-            width: 100%;
-            border: none;
-            display: block;
-            min-height: 0;
-        }
+        .flip-back iframe { flex: 1; width: 100%; border: none; display: block; min-height: 0; }
+
         .flip-back-btn {
             position: absolute;
             top: 14px;
@@ -831,33 +684,22 @@
             pointer-events: auto;
         }
         .flip-back-btn svg { width: 16px; height: 16px; stroke-width: 2.5; }
-        .flip-back-btn:active {
-            background: var(--text);
-            color: #ffffff;
-            transform: scale(0.95);
-        }
+        .flip-back-btn:active { background: var(--text); color: #ffffff; transform: scale(0.95); }
         @media (max-width: 768px) {
-            .flip-back-btn {
-                top: 12px; right: 12px;
-                padding: 16px 24px;
-                font-size: 14px;
-                letter-spacing: 1.5px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            }
+            .flip-back-btn { top: 12px; right: 12px; padding: 16px 24px; font-size: 14px; letter-spacing: 1.5px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
             .flip-back-btn svg { width: 18px; height: 18px; }
         }
 
         /* ============================================
            СЕКЦИЯ 4 — ТАЙМИНГ
            ============================================ */
-        .timeline-section .section-inner {
-            text-align: left;
-            position: relative;
-        }
+        .timeline-section .section-inner { text-align: left; position: relative; }
+
+        /* ВАЖНО: увеличен margin-bottom, чтобы "for you" не залезал на контент */
         .timeline-header {
             position: relative;
             display: inline-block;
-            margin-bottom: 42px;
+            margin-bottom: 76px;
             padding: 0 10px;
         }
         .timeline-title {
@@ -877,7 +719,7 @@
             color: var(--text-soft);
             position: absolute;
             right: -34px;
-            bottom: -40px;
+            bottom: -22px;
             transform: rotate(-4deg);
             line-height: 1;
             letter-spacing: -2px;
@@ -886,24 +728,10 @@
         }
         .timeline-section p { color: var(--text-soft); }
 
-        .timeline {
-            position: relative;
-            padding-left: 44px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 16px;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: var(--text-light);
-        }
+        .timeline { position: relative; padding-left: 44px; }
+        .timeline::before { content: ''; position: absolute; left: 16px; top: 0; bottom: 0; width: 1px; background: var(--text-light); }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 38px;
-        }
+        .timeline-item { position: relative; margin-bottom: 38px; }
         .timeline-item:last-child { margin-bottom: 0; }
 
         .timeline-icon {
@@ -945,9 +773,7 @@
         /* ============================================
            СЕКЦИЯ 5 — DRESS-CODE
            ============================================ */
-        .dresscode-section {
-            padding: 20px 0;
-        }
+        .dresscode-section { padding: 20px 0; }
 
         .dresscode-section .section-inner {
             text-align: center;
@@ -961,12 +787,7 @@
             padding-bottom: 6px;
         }
 
-        .dresscode-header {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 6px;
-            padding: 0 20px;
-        }
+        .dresscode-header { position: relative; display: inline-block; margin-bottom: 6px; padding: 0 20px; }
 
         .dresscode-title {
             font-family: 'Playfair Display', serif;
@@ -1008,17 +829,8 @@
             margin: 28px 0 0;
         }
         .dresscode-divider::before,
-        .dresscode-divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
-        .dresscode-divider span {
-            color: var(--accent);
-            font-size: 10px;
-            animation: gentleFloat 4s ease-in-out infinite;
-        }
+        .dresscode-divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+        .dresscode-divider span { color: var(--accent); font-size: 10px; animation: gentleFloat 4s ease-in-out infinite; }
 
         .dresscode-subtitle {
             font-family: 'Montserrat', sans-serif;
@@ -1063,11 +875,7 @@
         .color-heart:nth-child(6) { animation-delay: 10s; }
         .color-heart:nth-child(7) { animation-delay: 12s; }
 
-        .color-heart svg {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
+        .color-heart svg { width: 100%; height: 100%; display: block; }
 
         .inspiration-title {
             display: flex;
@@ -1084,21 +892,9 @@
             text-transform: uppercase;
         }
         .inspiration-title::before,
-        .inspiration-title::after {
-            content: '';
-            flex: 1;
-            max-width: 70px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-        }
+        .inspiration-title::after { content: ''; flex: 1; max-width: 70px; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
 
-        .inspiration-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 520px;
-            margin: 0 auto;
-            padding: 10px;
-        }
+        .inspiration-wrapper { position: relative; width: 100%; max-width: 520px; margin: 0 auto; padding: 10px; }
 
         .inspiration-image {
             position: relative;
@@ -1141,14 +937,7 @@
             filter: grayscale(4%) sepia(4%);
         }
 
-        .corner {
-            position: absolute;
-            width: 28px;
-            height: 28px;
-            pointer-events: none;
-            z-index: 3;
-        }
-
+        .corner { position: absolute; width: 28px; height: 28px; pointer-events: none; z-index: 3; }
         .corner-tl {
             top: 0;
             left: 0;
@@ -1158,7 +947,6 @@
             animation: cornerTopLeft 3.5s ease-in-out infinite;
             transform-origin: top left;
         }
-
         .corner-br {
             bottom: 0;
             right: 0;
@@ -1172,9 +960,7 @@
         /* ============================================
            СЕКЦИЯ 6 — DETAILS
            ============================================ */
-        .details-section {
-            padding: 0 0 20px;
-        }
+        .details-section { padding: 0 0 20px; }
 
         .details-section .section-inner {
             text-align: center;
@@ -1182,16 +968,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 8px;
             max-height: 100vh;
         }
 
-        .details-header {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 16px;
-            padding: 0 20px;
-        }
+        .details-header { position: relative; display: inline-block; margin-bottom: 6px; padding: 0 20px; }
 
         .details-title {
             font-family: 'Playfair Display', serif;
@@ -1221,6 +1002,20 @@
             white-space: nowrap;
         }
 
+        /* КОНТЕЙНЕР ДЛЯ DETAILS — с внутренними отступами от краёв */
+        .details-container {
+            width: 100%;
+            padding: 22px 22px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid rgba(184, 164, 140, 0.22);
+            box-shadow: 0 8px 30px rgba(184, 164, 140, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
         .details-intro {
             font-family: 'Montserrat', sans-serif;
             font-style: normal;
@@ -1229,14 +1024,12 @@
             line-height: 1.5;
             color: var(--text);
             max-width: 440px;
-            margin: 0 auto 4px;
+            margin: 0 auto;
             text-align: center;
             letter-spacing: 0.1px;
         }
 
-        .details-block {
-            margin: 0;
-        }
+        .details-block { margin: 0; width: 100%; }
 
         .details-subtitle {
             font-family: 'Playfair Display', serif;
@@ -1264,7 +1057,7 @@
         .details-subtitle::before { left: -24px; }
         .details-subtitle::after  { right: -24px; }
 
-        /* Основной текст Details — НЕ увеличиваем, без жирного */
+        /* Основной текст Details — без жирного, размер не увеличен */
         .details-text {
             font-family: 'Montserrat', sans-serif;
             font-style: normal;
@@ -1278,7 +1071,6 @@
             letter-spacing: 0.1px;
         }
 
-        /* Убираем всякое выделение внутри Details */
         .details-text b,
         .details-text strong {
             font-weight: 400;
@@ -1290,12 +1082,8 @@
            СЕКЦИЯ 7 — ФИНАЛЬНОЕ ФОТО
            ============================================ */
         .footer-image { text-align: center; }
-        .footer-image .section-inner {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+        .footer-image .section-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
         .arch-image {
             width: 100%;
             max-width: 320px;
@@ -1305,64 +1093,25 @@
             position: relative;
             background: var(--dusty);
         }
-        .arch-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: grayscale(60%) sepia(20%) brightness(1.05);
-        }
-        .footer-text {
-            margin-top: 30px;
-            font-family: 'Great Vibes', cursive;
-            font-size: 44px;
-            color: var(--text);
-            text-align: center;
-            letter-spacing: 2px;
-        }
+        .arch-image img { width: 100%; height: auto; display: block; filter: grayscale(60%) sepia(20%) brightness(1.05); }
+        .footer-text { margin-top: 30px; font-family: 'Great Vibes', cursive; font-size: 44px; color: var(--text); text-align: center; letter-spacing: 2px; }
 
         /* ============================================
            HOVER
            ============================================ */
         @media (hover: hover) and (pointer: fine) {
             .music-btn:hover { transform: scale(1.06); }
-            .music-player:hover {
-                box-shadow: 0 14px 50px rgba(74, 64, 56, 0.25);
-                transform: translateY(-2px);
-            }
-            .calendar-card:hover {
-                box-shadow: 0 24px 65px rgba(184, 164, 140, 0.18);
-                transform: translateY(-4px);
-            }
-            .flip-container:hover .flip-front {
-                border-color: var(--accent);
-                box-shadow: 0 24px 60px rgba(184, 164, 140, 0.25);
-            }
+            .music-player:hover { box-shadow: 0 14px 50px rgba(74, 64, 56, 0.25); transform: translateY(-2px); }
+            .calendar-card:hover { box-shadow: 0 24px 65px rgba(184, 164, 140, 0.18); transform: translateY(-4px); }
+            .flip-container:hover .flip-front { border-color: var(--accent); box-shadow: 0 24px 60px rgba(184, 164, 140, 0.25); }
             .flip-container:hover .flip-front::before { width: 34px; height: 34px; }
             .flip-container:hover .flip-front::after  { width: 34px; height: 34px; }
-            .flip-container:hover .map-hint {
-                background: var(--accent);
-                transform: translateY(-3px);
-                box-shadow: 0 14px 32px rgba(184, 164, 140, 0.4);
-            }
-            .flip-back-btn:hover {
-                background: var(--text);
-                color: #ffffff;
-                transform: translateY(-2px);
-            }
-            .timeline-item:hover .timeline-icon {
-                transform: scale(1.15);
-                background: var(--blush);
-                color: var(--text);
-            }
+            .flip-container:hover .map-hint { background: var(--accent); transform: translateY(-3px); box-shadow: 0 14px 32px rgba(184, 164, 140, 0.4); }
+            .flip-back-btn:hover { background: var(--text); color: #ffffff; transform: translateY(-2px); }
+            .timeline-item:hover .timeline-icon { transform: scale(1.15); background: var(--blush); color: var(--text); }
             .timeline-item:hover .timeline-content { transform: translateX(6px); }
-            .arch-image:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 20px 50px rgba(184, 164, 140, 0.25);
-            }
-            .arch-image:hover img {
-                filter: grayscale(0%) sepia(0%) brightness(1);
-                transform: scale(1.05);
-            }
+            .arch-image:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(184, 164, 140, 0.25); }
+            .arch-image:hover img { filter: grayscale(0%) sepia(0%) brightness(1); transform: scale(1.05); }
         }
 
         /* ============================================
@@ -1376,7 +1125,7 @@
         /* === МОБИЛЬНЫЕ: крупный текст, но в один экран === */
         @media (max-width: 480px) {
             .fullscreen-section { padding: 28px 0; }
-            .section-inner { padding: 0 18px; }
+            .section-inner { padding: 0 16px; }
 
             .hero { min-height: 520px; }
             .hero-date { font-size: 16px; letter-spacing: 7px; margin-bottom: 30px; }
@@ -1386,25 +1135,14 @@
             /* Приветствие */
             .greeting { margin-bottom: 22px; }
             .greeting::before { display: none; }
-            .greeting h1 {
-                font-size: 34px;
-                margin-bottom: 16px;
-                letter-spacing: 1px;
-            }
+            .greeting h1 { font-size: 34px; margin-bottom: 16px; letter-spacing: 1px; }
             .greeting h1::before,
             .greeting h1::after { display: none; }
-            .greeting p {
-                font-size: 19px;
-                line-height: 1.55;
-            }
+            .greeting p { font-size: 19px; line-height: 1.55; }
 
             /* Календарь */
             .calendar-card { padding: 24px 14px 22px; border-radius: 18px; }
-            .calendar-month {
-                font-size: 32px;
-                letter-spacing: 5px;
-                margin-bottom: 22px;
-            }
+            .calendar-month { font-size: 32px; letter-spacing: 5px; margin-bottom: 22px; }
             .calendar-month::after { bottom: -10px; width: 40px; }
             .calendar-grid { gap: 3px 1px; }
             .calendar-day-name { font-size: 12px; padding-bottom: 6px; letter-spacing: 0.5px; }
@@ -1413,10 +1151,10 @@
             .date-wrap span { font-size: 21px; }
             .heart-svg { width: 50px; height: 50px; }
 
-            /* Локация */
-            .where-header { margin-bottom: 30px; }
+            /* Локация — приподняли заголовок, "for you" ниже, но не на карточке */
+            .where-header { margin-bottom: 64px; }
             .where-title { font-size: 54px; }
-            .where-for-you { font-size: 44px; right: -22px; bottom: -32px; }
+            .where-for-you { font-size: 44px; right: -22px; bottom: -20px; }
 
             .flip-front { padding: 34px 22px 30px; min-height: 360px; }
             .address-top-line { margin-bottom: 18px; }
@@ -1425,10 +1163,10 @@
             .address-place { font-size: 19px; margin-bottom: 24px; }
             .map-hint { padding: 15px 26px; font-size: 13px; letter-spacing: 1.8px; }
 
-            /* Тайминг — крупный текст */
-            .timeline-header { margin-bottom: 30px; }
+            /* Тайминг — приподняли заголовок */
+            .timeline-header { margin-bottom: 64px; }
             .timeline-title { font-size: 54px; }
-            .timeline-for-you { font-size: 44px; right: -22px; bottom: -32px; }
+            .timeline-for-you { font-size: 44px; right: -22px; bottom: -20px; }
             .timeline { padding-left: 42px; }
             .timeline::before { left: 15px; }
             .timeline-icon { left: -42px; width: 32px; height: 32px; font-size: 14px; }
@@ -1436,7 +1174,7 @@
             .timeline-content p { font-size: 17px; line-height: 1.55; }
             .timeline-item { margin-bottom: 30px; }
 
-            /* Dress-code — крупнее */
+            /* Dress-code */
             .dresscode-section { padding: 14px 0; }
             .dresscode-title { font-size: 30px; letter-spacing: 4px; }
             .dresscode-thankyou { font-size: 34px; right: -16px; bottom: -32px; }
@@ -1451,11 +1189,12 @@
             .corner-tl { border-top-left-radius: 8px; }
             .corner-br { border-bottom-right-radius: 8px; }
 
-            /* Details — размер НЕ трогаем, только убрано выделение через strong */
+            /* Details — размер не меняем, добавлен контейнер */
             .details-section { padding: 0 0 14px; }
             .details-title { font-size: 36px; }
             .details-signature { font-size: 24px; right: -14px; bottom: -20px; }
-            .details-header { margin-bottom: 12px; }
+            .details-header { margin-bottom: 8px; }
+            .details-container { padding: 18px 16px; border-radius: 16px; gap: 10px; }
             .details-intro { font-size: 16px; line-height: 1.5; }
             .details-subtitle { font-size: 24px; margin-bottom: 6px; }
             .details-subtitle::before { left: -20px; width: 12px; }
@@ -1480,11 +1219,13 @@
             .heart-svg { width: 46px; height: 46px; }
             .calendar-day-name { font-size: 11px; }
 
+            .where-header { margin-bottom: 56px; }
             .where-title { font-size: 48px; }
-            .where-for-you { font-size: 38px; right: -18px; bottom: -28px; }
+            .where-for-you { font-size: 38px; right: -18px; bottom: -18px; }
 
+            .timeline-header { margin-bottom: 56px; }
             .timeline-title { font-size: 48px; }
-            .timeline-for-you { font-size: 38px; right: -18px; bottom: -28px; }
+            .timeline-for-you { font-size: 38px; right: -18px; bottom: -18px; }
             .timeline-content strong { font-size: 18px; }
             .timeline-content p { font-size: 16px; }
 
@@ -1495,6 +1236,7 @@
 
             .details-title { font-size: 32px; }
             .details-signature { font-size: 20px; right: -12px; bottom: -18px; }
+            .details-container { padding: 16px 14px; }
         }
 
         /* Планшеты и ПК — уменьшенный вертикальный вьюпорт */
@@ -1515,11 +1257,11 @@
             .details-section { padding: 0 0 18px; }
             .details-title { font-size: 40px; }
             .details-signature { font-size: 26px; bottom: -20px; right: -16px; }
-            .details-header { margin-bottom: 14px; }
+            .details-header { margin-bottom: 8px; }
+            .details-container { padding: 20px 20px; gap: 10px; }
             .details-intro { font-size: 16px; line-height: 1.5; }
             .details-subtitle { font-size: 22px; margin-bottom: 6px; }
             .details-text { font-size: 16px; line-height: 1.55; }
-            .details-section .section-inner { gap: 10px; }
         }
 
         @media (max-height: 700px) and (min-width: 481px) {
@@ -1535,16 +1277,16 @@
             .heart-svg { width: 46px; height: 46px; }
             .timeline-item { margin-bottom: 26px; }
 
-            .where-header { margin-bottom: 30px; }
+            .where-header { margin-bottom: 56px; }
             .where-title { font-size: 48px; }
-            .where-for-you { font-size: 40px; bottom: -32px; right: -22px; }
+            .where-for-you { font-size: 40px; bottom: -18px; right: -22px; }
             .flip-front { padding: 28px 20px 24px; min-height: 320px; }
             .address-venue { font-size: 24px; }
             .address-place { font-size: 18px; margin-bottom: 18px; }
 
-            .timeline-header { margin-bottom: 30px; }
+            .timeline-header { margin-bottom: 56px; }
             .timeline-title { font-size: 48px; }
-            .timeline-for-you { font-size: 40px; bottom: -32px; right: -22px; }
+            .timeline-for-you { font-size: 40px; bottom: -18px; right: -22px; }
             .timeline-content strong { font-size: 18px; }
             .timeline-content p { font-size: 16px; }
 
@@ -1564,20 +1306,17 @@
             .details-section { padding: 0 0 10px; }
             .details-title { font-size: 32px; }
             .details-signature { font-size: 22px; bottom: -18px; right: -14px; }
-            .details-header { margin-bottom: 12px; }
+            .details-header { margin-bottom: 6px; }
+            .details-container { padding: 16px 16px; gap: 8px; }
             .details-intro { font-size: 15px; line-height: 1.45; }
             .details-subtitle { font-size: 20px; margin-bottom: 4px; }
             .details-subtitle::before { left: -18px; width: 10px; }
             .details-subtitle::after { right: -18px; width: 10px; }
             .details-text { font-size: 15px; line-height: 1.5; }
-            .details-section .section-inner { gap: 8px; }
         }
 
         @media (min-width: 1400px) {
-            .hero-bg {
-                background-size: cover;
-                background-position: center 30%;
-            }
+            .hero-bg { background-size: cover; background-position: center 30%; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -1964,21 +1703,23 @@
                 <span class="details-signature">thank you</span>
             </div>
 
-            <p class="details-intro">Мы догадываемся, что после получения приглашения у Вас может появиться ряд вопросов:</p>
+            <div class="details-container">
+                <p class="details-intro">Мы догадываемся, что после получения приглашения у Вас может появиться ряд вопросов:</p>
 
-            <div class="details-block">
-                <h3 class="details-subtitle">Цветы</h3>
-                <p class="details-text">Букеты прекрасны, но, к сожалению, быстро увядают. Мы будем искренне рады, если вместо цветов Вы подарите нам алкоголь (мы предпочитаем: ликёрное вино, виски или коньяк). А если на бутылке будет Ваше пожелание или дата особого события — мы обязательно откроем её именно в этот день!</p>
-            </div>
+                <div class="details-block">
+                    <h3 class="details-subtitle">Цветы</h3>
+                    <p class="details-text">Букеты прекрасны, но, к сожалению, быстро увядают. Мы будем искренне рады, если вместо цветов вы подарите нам алкоголь (мы предпочитаем: ликёрное вино, виски или коньяк). А если на бутылке будет ваше пожелание или дата особого события — мы обязательно откроем её именно в этот день!</p>
+                </div>
 
-            <div class="details-block">
-                <h3 class="details-subtitle">Что дарить?</h3>
-                <p class="details-text">Будем рады вкладу в бюджет нашей семьи — он поможет воплотить нашу мечту в реальность!</p>
-            </div>
+                <div class="details-block">
+                    <h3 class="details-subtitle">Что дарить?</h3>
+                    <p class="details-text">Будем рады вкладу в бюджет нашей семьи — он поможет воплотить нашу мечту в реальность!</p>
+                </div>
 
-            <div class="details-block">
-                <h3 class="details-subtitle">Маленькие гости</h3>
-                <p class="details-text">Несмотря на то, что мы очень любим детей, мы хотели бы в полной мере насладиться моментом праздника и хотели бы дать эту возможность и Вам. Поэтому просим Вас прийти без детей.</p>
+                <div class="details-block">
+                    <h3 class="details-subtitle">Маленькие гости</h3>
+                    <p class="details-text">Несмотря на то, что мы очень любим детей, мы хотели бы в полной мере насладиться моментом праздника и хотели бы дать эту возможность и вам. Поэтому просим вас прийти без детей.</p>
+                </div>
             </div>
 
         </div>
