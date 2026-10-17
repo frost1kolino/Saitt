@@ -492,7 +492,7 @@
             max-width: 500px; text-align: center; margin: 0;
         }
 
-        /* 5 КРУЖКОВ (РАСТУШЕВКА) */
+        /* 5 КРУЖКОВ (РАСТУШЕВКА, БЕЗ ХОВЕРА) */
         .color-rings-container {
             display: flex;
             flex-direction: column;
@@ -509,15 +509,16 @@
         }
 
         .ring-row.bottom {
-            margin-top: -30px; 
+            margin-top: -35px; /* Увеличил нахлест, так как кружки стали больше */
             position: relative;
             z-index: 2;
         }
 
         .color-circle {
             position: relative;
-            width: clamp(70px, 20vw, 110px); 
-            height: clamp(70px, 20vw, 110px);
+            /* УВЕЛИЧИЛИ РАЗМЕР: от 85px до 130px */
+            width: clamp(85px, 22vw, 130px); 
+            height: clamp(85px, 22vw, 130px);
             border-radius: 50%;
             
             background-size: cover;
@@ -525,22 +526,15 @@
             background-repeat: no-repeat;
             
             /* Мягкая тень в цвет фона (растворение) */
-            box-shadow: 0 0 16px 6px #faf6ed, 
+            box-shadow: 0 0 20px 8px #faf6ed, 
                         inset 0 0 12px rgba(0, 0, 0, 0.15); 
             
             /* Деликатная маска (убирает жесткий край) */
             -webkit-mask-image: radial-gradient(circle at center, black 75%, transparent 95%);
             mask-image: radial-gradient(circle at center, black 75%, transparent 95%);
             
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-        }
-
-        .color-circle:hover {
-            transform: scale(1.1);
-            z-index: 10;
-            box-shadow: 0 0 25px 10px #faf6ed, 
-                        inset 0 0 12px rgba(0, 0, 0, 0.2);
+            /* Убрана анимация и transition */
+            cursor: default;
         }
 
         /* Ссылки на картинки */
@@ -715,7 +709,7 @@
             .dresscode-divider { margin: 8px 0; }
             
             .color-rings-container { gap: 15px; }
-            .ring-row.bottom { margin-top: -20px; }
+            .ring-row.bottom { margin-top: -25px; }
 
             .details-title { font-size: 30px; }
             .details-signature { font-size: 18px; right: -10px; bottom: 0; }
@@ -753,8 +747,10 @@
             .timeline-for-you { font-size: 36px; bottom: -15px; right: -18px; }
             .timeline-content strong { font-size: 16px; }
             .timeline-content p { font-size: 14px; }
-            .color-circle { width: clamp(55px, 12vw, 75px); height: clamp(55px, 12vw, 75px); }
-            .ring-row.bottom { margin-top: -20px; }
+            
+            /* Уменьшаем кружки для низких экранов ПК, чтобы влезло */
+            .color-circle { width: clamp(65px, 15vw, 100px); height: clamp(65px, 15vw, 100px); }
+            .ring-row.bottom { margin-top: -25px; }
         }
 
         @media (min-width: 1400px) {
@@ -1010,7 +1006,7 @@
 
             <p class="dresscode-subtitle">Для нас главное — ваше присутствие!<br>Но мы будем рады, если в своих нарядах вы поддержите цветовую гамму нашей свадьбы.</p>
 
-            <!-- 5 Кружков с фото и плавной растушевкой -->
+            <!-- 5 Кружков с фото, БЕЗ анимаций -->
             <div class="color-rings-container">
                 <div class="ring-row top">
                     <div class="color-circle img-1"></div>
