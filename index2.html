@@ -43,27 +43,27 @@
             --gold-deep: #b8941f;
         }
 
-        /* МУЗЫКАЛЬНЫЙ ПЛЕЕР (стандартный размер) */
+        /* МУЗЫКАЛЬНЫЙ ПЛЕЕР */
         .music-player {
-            position: fixed; bottom: 24px; right: 24px; z-index: 200;
-            display: flex; align-items: center; gap: 14px;
-            background: rgba(253, 251, 248, 0.9);
+            position: fixed; bottom: 20px; right: 20px; z-index: 200;
+            display: flex; align-items: center; gap: 10px;
+            background: rgba(253, 251, 248, 0.95);
             backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
             border: 1px solid rgba(184, 164, 140, 0.3);
-            border-radius: 60px; padding: 7px 20px 7px 7px;
-            box-shadow: 0 10px 40px rgba(74, 64, 56, 0.18);
+            border-radius: 50px; padding: 6px 16px 6px 6px;
+            box-shadow: 0 8px 30px rgba(74, 64, 56, 0.15);
             transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.5s ease;
             opacity: 0; transform: translateY(20px); pointer-events: none;
         }
         .music-player.ready { opacity: 1; transform: translateY(0); pointer-events: auto; }
         .music-btn {
-            position: relative; width: 46px; height: 46px; border-radius: 50%;
+            position: relative; width: 40px; height: 40px; border-radius: 50%;
             background: var(--text); color: var(--ivory); border: none; cursor: pointer;
             display: flex; align-items: center; justify-content: center;
             transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1); flex-shrink: 0;
             outline: none; -webkit-tap-highlight-color: transparent;
         }
-        .music-btn svg { width: 20px; height: 20px; }
+        .music-btn svg { width: 18px; height: 18px; }
         .music-btn.playing {
             background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 100%);
             box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
@@ -77,9 +77,9 @@
         .music-btn.playing::after { animation-delay: 1s; }
         @keyframes musicPulse { 0% { transform: scale(1); opacity: 0.9; } 100% { transform: scale(1.9); opacity: 0; } }
         @keyframes discSpin { to { transform: rotate(360deg); } }
-        .music-label { display: flex; flex-direction: column; line-height: 1.15; overflow: hidden; max-width: 160px; }
-        .music-title { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; }
-        .music-artist { font-size: 10px; color: var(--text-soft); letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+        .music-label { display: flex; flex-direction: column; line-height: 1.15; overflow: hidden; max-width: 100px; }
+        .music-title { font-size: 12px; font-weight: 500; color: var(--text); white-space: nowrap; }
+        .music-artist { font-size: 9px; color: var(--text-soft); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 1px; }
         .music-tooltip {
             position: absolute; bottom: calc(100% + 12px); right: 0;
             background: var(--text); color: var(--ivory); padding: 8px 16px;
@@ -99,13 +99,13 @@
             width: 100%;
             min-height: 100vh; min-height: 100dvh;
             display: flex; align-items: center; justify-content: center;
-            /* Отступ снизу, чтобы плашка ничего не перекрывала */
-            padding: 40px 0 120px 0; 
+            /* Отступ снизу 90px, чтобы плашка не перекрывала контент */
+            padding: 20px 0 90px 0; 
             position: relative; overflow: hidden;
         }
         .section-inner {
             max-width: 480px; width: 100%; margin: 0 auto;
-            padding: 0 24px; position: relative; z-index: 2;
+            padding: 0 20px; position: relative; z-index: 2;
         }
         .section-inner--wide { max-width: 600px; }
 
@@ -146,9 +146,10 @@
             text-shadow: 0 2px 12px rgba(74, 64, 56, 0.5);
             margin-bottom: 40px; padding-left: 8px;
         }
+        
+        /* СКРОЛЛ-ИНДИКАТОР (ДАЛЕЕ) - Оставляем только на ПК */
         .scroll-indicator {
-            /* Поднят выше, чтобы не перекрываться плашкой */
-            position: absolute; bottom: 110px; left: 50%; transform: translateX(-50%);
+            position: absolute; bottom: 90px; left: 50%; transform: translateX(-50%);
             z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 10px;
             color: var(--text-soft); font-size: 11px; letter-spacing: 3px;
             text-transform: uppercase; opacity: 0.7;
@@ -216,16 +217,16 @@
             width: 250px; height: 250px; bottom: 5%; right: -100px;
             animation: gentleFloat 9s ease-in-out infinite reverse;
         }
-        .greeting { text-align: center; margin-bottom: 24px; position: relative; padding: 0 6px; }
+        .greeting { text-align: center; margin-bottom: 20px; position: relative; padding: 0 6px; }
         .greeting::before {
             content: ''; display: block; width: 60px; height: 1px;
             background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            margin: 0 auto 18px;
+            margin: 0 auto 15px;
         }
         .greeting h1 {
             font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400;
-            font-size: clamp(38px, 7.5vw, 52px); line-height: 1.1; letter-spacing: 2px;
-            color: var(--text); margin-bottom: 16px; position: relative;
+            font-size: clamp(34px, 7vw, 52px); line-height: 1.1; letter-spacing: 2px;
+            color: var(--text); margin-bottom: 12px; position: relative;
             display: inline-block; animation: softGlow 5s ease-in-out infinite;
         }
         .greeting h1::before, .greeting h1::after {
@@ -236,49 +237,49 @@
         .greeting h1::after { right: -44px; transform: translateY(-50%); }
         .greeting p {
             font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
-            font-size: clamp(20px, 4.4vw, 24px); line-height: 1.6;
+            font-size: clamp(18px, 4vw, 24px); line-height: 1.5;
             color: var(--text-soft); letter-spacing: 0.4px;
             max-width: 460px; margin: 0 auto; text-align: center; text-wrap: balance;
         }
         .calendar-card {
             background: #ffffff; border: 1px solid var(--line); border-radius: 22px;
-            padding: 28px 22px 24px; color: var(--text); position: relative;
+            padding: 24px 16px 20px; color: var(--text); position: relative;
             box-shadow: 0 16px 50px rgba(184, 164, 140, 0.1);
         }
         .calendar-month {
             font-family: 'Cormorant Garamond', serif; font-weight: 400;
-            font-size: 36px; letter-spacing: 9px; text-transform: uppercase;
-            color: var(--text); margin-bottom: 24px; position: relative;
+            font-size: 32px; letter-spacing: 7px; text-transform: uppercase;
+            color: var(--text); margin-bottom: 20px; position: relative;
             display: block; text-align: center;
         }
         .calendar-month::after {
-            content: ''; position: absolute; bottom: -12px; left: 50%;
+            content: ''; position: absolute; bottom: -10px; left: 50%;
             transform: translateX(-50%); width: 50px; height: 1px;
             background: var(--text-light);
         }
         .calendar-grid {
             display: grid; grid-template-columns: repeat(7, 1fr);
-            gap: 4px 2px; max-width: 340px; margin: 0 auto;
+            gap: 2px 2px; max-width: 340px; margin: 0 auto;
         }
         .calendar-day-name {
-            font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 500;
+            font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500;
             letter-spacing: 1px; text-transform: lowercase; color: var(--text-light);
-            padding-bottom: 8px; text-align: center;
+            padding-bottom: 4px; text-align: center;
         }
         .calendar-day {
-            font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500;
-            color: var(--text); height: 42px; display: flex; align-items: center;
+            font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500;
+            color: var(--text); height: 36px; display: flex; align-items: center;
             justify-content: center; position: relative;
         }
         .calendar-day.other-month { color: var(--text-light); opacity: 0.45; }
         .calendar-day.highlighted { position: relative; z-index: 2; color: var(--text); font-weight: 600; }
         .date-wrap {
-            position: relative; width: 42px; height: 42px;
+            position: relative; width: 36px; height: 36px;
             display: flex; align-items: center; justify-content: center;
         }
-        .date-wrap span { position: relative; z-index: 2; font-size: 23px; line-height: 1; }
+        .date-wrap span { position: relative; z-index: 2; font-size: 21px; line-height: 1; }
         .heart-svg {
-            position: absolute; top: 50%; left: 50%; width: 56px; height: 56px;
+            position: absolute; top: 50%; left: 50%; width: 48px; height: 48px;
             transform: translate(-50%, -35%); pointer-events: none; z-index: 0;
             animation: heartBeat 1.8s ease-in-out infinite;
             transform-origin: center center; overflow: visible;
@@ -293,7 +294,7 @@
         .where-section .section-inner { text-align: center; position: relative; }
         .where-header {
             position: relative; display: inline-block;
-            margin-bottom: 60px; padding: 0 10px;
+            margin-bottom: 40px; padding: 0 10px;
         }
         .where-title {
             font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400;
@@ -310,10 +311,10 @@
         .flip-container { perspective: 1600px; width: 100%; cursor: pointer; -webkit-tap-highlight-color: transparent; }
         .flip-inner { position: relative; width: 100%; }
         .flip-front {
-            position: relative; width: 100%; padding: 44px 30px 38px;
+            position: relative; width: 100%; padding: 30px 20px 28px;
             border: 1px solid rgba(184, 164, 140, 0.3); border-radius: 20px;
             background: var(--ivory); text-align: center; overflow: hidden;
-            min-height: 400px; display: flex; flex-direction: column; justify-content: center;
+            min-height: 320px; display: flex; flex-direction: column; justify-content: center;
             backface-visibility: hidden; -webkit-backface-visibility: hidden;
             transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
         }
@@ -324,28 +325,28 @@
         }
         .flip-front::before { top: 12px; left: 12px; border-right: none; border-bottom: none; }
         .flip-front::after { bottom: 12px; right: 12px; border-left: none; border-top: none; }
-        .address-top-line { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 22px; color: var(--text-light); }
+        .address-top-line { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 18px; color: var(--text-light); }
         .address-top-line::before, .address-top-line::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); max-width: 60px; }
         .address-heart-icon { font-size: 18px; color: var(--accent); animation: pulse 2.5s ease-in-out infinite; }
-        .address-label { display: block; font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 18px; font-weight: 500; }
+        .address-label { display: block; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--text-light); margin-bottom: 14px; font-weight: 500; }
         .address-venue {
             font-family: 'Playfair Display', serif; font-style: italic;
-            font-size: clamp(28px, 6.5vw, 34px); color: var(--text);
-            line-height: 1.2; margin-bottom: 12px; position: relative;
-            display: inline-block; padding-bottom: 12px;
+            font-size: clamp(26px, 6.5vw, 34px); color: var(--text);
+            line-height: 1.2; margin-bottom: 10px; position: relative;
+            display: inline-block; padding-bottom: 10px;
         }
         .address-venue::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: 44px; height: 1px; background: var(--accent); }
-        .address-place { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 21px; font-weight: 500; color: var(--text-soft); letter-spacing: 0.5px; margin-bottom: 26px; }
+        .address-place { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 19px; font-weight: 500; color: var(--text-soft); letter-spacing: 0.5px; margin-bottom: 20px; }
         .map-hint {
             display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            padding: 15px 30px; background: var(--text); color: var(--ivory);
+            padding: 14px 26px; background: var(--text); color: var(--ivory);
             border: none; border-radius: 50px; font-family: 'Montserrat', sans-serif;
-            font-size: 13px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+            font-size: 12px; font-weight: 500; letter-spacing: 1.8px; text-transform: uppercase;
             cursor: pointer; transition: all 0.3s ease;
             box-shadow: 0 8px 22px rgba(74, 64, 56, 0.25); margin: 0 auto;
             animation: hintPulse 2.5s ease-in-out infinite; -webkit-tap-highlight-color: transparent;
         }
-        .map-hint svg { width: 17px; height: 17px; }
+        .map-hint svg { width: 16px; height: 16px; }
         .map-hint:active { transform: scale(0.96); background: var(--accent); animation: none; }
         .flip-back {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -362,9 +363,9 @@
         .flip-back-btn {
             position: absolute; top: 14px; right: 14px; z-index: 100;
             display: inline-flex; align-items: center; gap: 10px;
-            padding: 14px 22px; background: #ffffff; color: var(--text);
+            padding: 12px 20px; background: #ffffff; color: var(--text);
             border: 2px solid var(--text); border-radius: 50px;
-            font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600;
+            font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600;
             letter-spacing: 1.2px; text-transform: uppercase; cursor: pointer;
             transition: all 0.25s ease; box-shadow: 0 8px 26px rgba(0, 0, 0, 0.25);
             -webkit-tap-highlight-color: transparent; pointer-events: auto;
@@ -376,7 +377,7 @@
         .timeline-section .section-inner { text-align: center; position: relative; }
         .timeline-header {
             position: relative; display: inline-block;
-            margin-bottom: 40px; padding: 0 10px;
+            margin-bottom: 24px; padding: 0 10px;
         }
         .timeline-title {
             font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400;
@@ -391,31 +392,31 @@
             text-shadow: 0 2px 10px rgba(184, 164, 140, 0.2);
         }
         .timeline-section p { color: var(--text-soft); }
-        .timeline { text-align: left; position: relative; padding-left: 40px; }
-        .timeline::before { content: ''; position: absolute; left: 14px; top: 0; bottom: 0; width: 1px; background: var(--text-light); }
-        .timeline-item { position: relative; margin-bottom: 24px; }
+        .timeline { text-align: left; position: relative; padding-left: 36px; }
+        .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 1px; background: var(--text-light); }
+        .timeline-item { position: relative; margin-bottom: 18px; }
         .timeline-item:last-child { margin-bottom: 0; }
         .timeline-icon {
-            position: absolute; left: -40px; top: 0; width: 30px; height: 30px;
+            position: absolute; left: -36px; top: 0; width: 26px; height: 26px;
             border-radius: 50%; border: 1px solid var(--accent); background: var(--ivory);
             display: flex; align-items: center; justify-content: center;
-            font-size: 13px; z-index: 1; animation: pulse 2.5s ease-in-out infinite;
+            font-size: 12px; z-index: 1; animation: pulse 2.5s ease-in-out infinite;
         }
         .timeline-content { padding-left: 10px; }
         .timeline-content strong {
-            display: block; font-size: 18px; margin-bottom: 6px;
+            display: block; font-size: 16px; margin-bottom: 4px;
             font-family: 'Montserrat', sans-serif; font-weight: 600;
             color: var(--text); letter-spacing: 0.2px;
         }
         .timeline-content p {
             font-family: 'Montserrat', sans-serif; font-style: normal;
-            font-weight: 400; font-size: 16px; color: var(--text-soft);
-            line-height: 1.5; margin-bottom: 0;
+            font-weight: 400; font-size: 14px; color: var(--text-soft);
+            line-height: 1.45; margin-bottom: 0;
         }
 
         /* СЕКЦИЯ 5 — DRESS-CODE */
         .dresscode-section {
-            padding: 40px 5vw 120px 5vw;
+            padding: 20px 5vw 90px 5vw;
             align-items: stretch;
         }
         .dresscode-section .section-inner {
@@ -423,26 +424,26 @@
             display: flex; flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 1.5vh;
+            gap: 10px;
         }
         .dresscode-header { position: relative; display: inline-block; padding: 0 20px; }
         .dresscode-title {
             font-family: 'Playfair Display', serif; font-style: normal; font-weight: 400;
-            font-size: clamp(32px, 5.5vh, 48px); line-height: 1; letter-spacing: 6px;
+            font-size: clamp(28px, 5vh, 48px); line-height: 1; letter-spacing: 4px;
             text-transform: uppercase; color: var(--text); margin: 0;
             padding-left: 6px; display: inline-block;
         }
         .dresscode-thankyou {
             font-family: 'Parisienne', cursive; font-weight: 400;
-            font-size: clamp(30px, 5vh, 52px); color: var(--text-soft);
-            position: absolute; right: -26px; bottom: -3.5vh; transform: rotate(-4deg);
+            font-size: clamp(26px, 4.5vh, 52px); color: var(--text-soft);
+            position: absolute; right: -20px; bottom: -2.5vh; transform: rotate(-4deg);
             line-height: 1; letter-spacing: -2px; pointer-events: none;
             text-shadow: 0 2px 10px rgba(184, 164, 140, 0.2); white-space: nowrap;
         }
         .dresscode-divider {
             display: flex; align-items: center; justify-content: center;
             gap: 14px; width: 100%; max-width: 260px;
-            margin: 15px 0;
+            margin: 10px 0;
         }
         .dresscode-divider::before, .dresscode-divider::after {
             content: ''; flex: 1; height: 1px;
@@ -451,20 +452,20 @@
         .dresscode-divider span { color: var(--accent); font-size: 10px; animation: gentleFloat 4s ease-in-out infinite; }
         .dresscode-subtitle {
             font-family: 'Montserrat', sans-serif; font-style: normal;
-            font-weight: 400; font-size: clamp(16px, 2.2vh, 18px);
+            font-weight: 400; font-size: clamp(14px, 3.5vw, 18px);
             line-height: 1.5; color: var(--text-soft); letter-spacing: 0.2px;
             max-width: 500px; text-align: center; margin: 0;
         }
 
-        /* 6 КРУЖКОВ — АТЛАСНАЯ ТКАНЬ */
+        /* 6 КРУЖКОВ */
         .color-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, 1fr);
-            gap: clamp(10px, 2.2vw, 16px);
+            gap: 10px;
             width: 100%;
-            max-width: min(180px, 45vw);
-            margin-top: 15px;
+            max-width: 160px;
+            margin-top: 10px;
         }
         .color-circle {
             position: relative;
@@ -514,10 +515,10 @@
         .color-circle:nth-child(6) { --c: #3a2d24; }
 
         /* ============================================
-           СЕКЦИЯ 6 — DETAILS (Фикс переполнения)
+           СЕКЦИЯ 6 — DETAILS (Ужат под экран)
            ============================================ */
         .details-section {
-            padding: 4vh 5vw 120px 5vw;
+            padding: 20px 5vw 90px 5vw;
             align-items: stretch;
             background-color: #f8ede8;
         }
@@ -526,29 +527,29 @@
             display: flex; flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 1.5vh;
+            gap: 10px;
         }
         .details-header {
             position: relative;
             display: inline-block;
-            padding: 0 20px 1.5vh;
+            padding: 0 20px 10px;
             flex-shrink: 0;
         }
         .details-title {
             font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400;
-            font-size: clamp(34px, 7vw, 60px); line-height: 1;
+            font-size: clamp(30px, 6.5vw, 60px); line-height: 1;
             letter-spacing: -1px; color: var(--text); margin: 0; display: inline-block;
         }
         .details-signature {
             font-family: 'Parisienne', cursive; font-weight: 400;
-            font-size: clamp(20px, 4.5vw, 34px); color: var(--text-soft);
-            position: absolute; right: -18px; bottom: 0; transform: rotate(-4deg);
+            font-size: clamp(18px, 4vw, 34px); color: var(--text-soft);
+            position: absolute; right: -14px; bottom: 0; transform: rotate(-4deg);
             line-height: 1; letter-spacing: -1px; pointer-events: none;
             text-shadow: 0 2px 10px rgba(184, 164, 140, 0.2); white-space: nowrap;
         }
         .details-intro {
             font-family: 'Montserrat', sans-serif; font-style: normal; font-weight: 400;
-            font-size: clamp(14px, 3.5vw, 16px); line-height: 1.4;
+            font-size: clamp(12px, 3vw, 16px); line-height: 1.35;
             color: var(--text);
             max-width: 720px; margin: 0 auto; text-align: center;
             letter-spacing: 0.1px; flex-shrink: 0;
@@ -559,7 +560,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 1.5vh;
+            gap: 12px;
         }
         .details-block {
             margin: 0;
@@ -569,19 +570,19 @@
         }
         .details-subtitle {
             font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500;
-            font-size: clamp(18px, 4.5vw, 26px); color: var(--text);
-            margin: 0 0 0.3vh; letter-spacing: 0.3px;
+            font-size: clamp(16px, 4vw, 26px); color: var(--text);
+            margin: 0 0 2px; letter-spacing: 0.3px;
             position: relative; display: inline-block;
         }
         .details-subtitle::before, .details-subtitle::after {
-            content: ''; position: absolute; top: 50%; width: 14px; height: 1px;
+            content: ''; position: absolute; top: 50%; width: 12px; height: 1px;
             background: var(--accent); opacity: 0.5; transform: translateY(-50%);
         }
-        .details-subtitle::before { left: -20px; }
-        .details-subtitle::after { right: -20px; }
+        .details-subtitle::before { left: -18px; }
+        .details-subtitle::after { right: -18px; }
         .details-text {
             font-family: 'Montserrat', sans-serif; font-style: normal; font-weight: 400;
-            font-size: clamp(13px, 3.4vw, 15.5px); line-height: 1.4;
+            font-size: clamp(12px, 3vw, 15.5px); line-height: 1.4;
             color: var(--text-soft); max-width: 780px; margin: 0 auto;
             text-align: center; letter-spacing: 0.1px;
         }
@@ -593,12 +594,12 @@
         .footer-image { text-align: center; }
         .footer-image .section-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .arch-image {
-            width: 100%; max-width: 320px; margin: 0 auto;
+            width: 100%; max-width: 280px; margin: 0 auto;
             border-radius: 50% 50% 0 0 / 100% 100% 0 0;
             overflow: hidden; position: relative; background: var(--dusty);
         }
         .arch-image img { width: 100%; height: auto; display: block; filter: grayscale(60%) sepia(20%) brightness(1.05); }
-        .footer-text { margin-top: 30px; font-family: 'Great Vibes', cursive; font-size: 44px; color: var(--text); text-align: center; letter-spacing: 2px; }
+        .footer-text { margin-top: 20px; font-family: 'Great Vibes', cursive; font-size: 38px; color: var(--text); text-align: center; letter-spacing: 2px; }
 
         /* HOVER */
         @media (hover: hover) and (pointer: fine) {
@@ -616,134 +617,104 @@
             .arch-image:hover img { filter: grayscale(0%) sepia(0%) brightness(1); transform: scale(1.05); }
         }
 
-        /* АДАПТИВНОСТЬ */
+        /* АДАПТИВНОСТЬ (убираем перекрытия) */
         @media (max-width: 768px) {
-            .fullscreen-section { padding: 40px 0 120px 0; }
-            .details-section { padding: 4vh 5vw 120px 5vw; }
-            .section-inner { padding: 0 20px; }
+            .fullscreen-section { padding: 20px 0 90px 0; }
+            .details-section { padding: 20px 5vw 90px 5vw; }
+            .dresscode-section { padding: 20px 5vw 90px 5vw; }
+            .section-inner { padding: 0 16px; }
             .details-section .section-inner { padding: 0; }
+            
+            /* Прячем "Далее" на телефонах, чтобы не перекрывало контент */
+            .scroll-indicator { display: none !important; }
         }
 
         @media (max-width: 480px) {
-            .fullscreen-section { padding: 30px 0 120px 0; }
-            .details-section { padding: 4vh 5vw 120px 5vw; }
-            .section-inner { padding: 0 16px; }
-            .details-section .section-inner { padding: 0; }
+            .fullscreen-section { padding: 15px 0 90px 0; }
+            .details-section { padding: 15px 5vw 90px 5vw; }
+            .dresscode-section { padding: 15px 5vw 90px 5vw; }
 
-            .hero { padding-bottom: 0; }
             .hero-date { font-size: 17px; letter-spacing: 7px; margin-bottom: 30px; }
-            .scroll-indicator { bottom: 110px; font-size: 11px; letter-spacing: 2px; }
 
-            .greeting { margin-bottom: 24px; }
+            .greeting { margin-bottom: 20px; }
             .greeting::before { display: none; }
-            .greeting h1 { font-size: 36px; margin-bottom: 16px; letter-spacing: 1px; }
+            .greeting h1 { font-size: 32px; margin-bottom: 12px; letter-spacing: 1px; }
             .greeting h1::before, .greeting h1::after { display: none; }
-            .greeting p { font-size: 20px; line-height: 1.5; }
+            .greeting p { font-size: 18px; line-height: 1.45; }
 
-            .calendar-card { padding: 24px 14px 22px; border-radius: 18px; }
-            .calendar-month { font-size: 32px; letter-spacing: 5px; margin-bottom: 22px; }
-            .calendar-month::after { bottom: -10px; width: 40px; }
-            .calendar-grid { gap: 3px 1px; }
-            .calendar-day-name { font-size: 13px; padding-bottom: 6px; letter-spacing: 0.5px; }
-            .calendar-day { font-size: 21px; height: 40px; }
-            .date-wrap { width: 40px; height: 40px; }
-            .date-wrap span { font-size: 21px; }
-            .heart-svg { width: 50px; height: 50px; }
+            .calendar-card { padding: 20px 14px 18px; border-radius: 18px; }
+            .calendar-month { font-size: 28px; letter-spacing: 5px; margin-bottom: 16px; }
+            .calendar-month::after { bottom: -8px; width: 36px; }
+            .calendar-grid { gap: 2px 1px; }
+            .calendar-day-name { font-size: 11px; padding-bottom: 4px; letter-spacing: 0.5px; }
+            .calendar-day { font-size: 18px; height: 34px; }
+            .date-wrap { width: 34px; height: 34px; }
+            .date-wrap span { font-size: 18px; }
+            .heart-svg { width: 42px; height: 42px; }
 
-            .where-header { margin-bottom: 60px; }
-            .where-title { font-size: 54px; }
-            .where-for-you { font-size: 42px; right: -22px; bottom: -20px; }
-            .flip-front { padding: 34px 22px 30px; min-height: 360px; }
-            .address-top-line { margin-bottom: 18px; }
-            .address-label { font-size: 12px; letter-spacing: 4px; margin-bottom: 16px; }
-            .address-venue { font-size: 28px; margin-bottom: 12px; padding-bottom: 10px; }
-            .address-place { font-size: 20px; margin-bottom: 24px; }
-            .map-hint { padding: 15px 26px; font-size: 13px; letter-spacing: 1.8px; }
-
-            .timeline-header { margin-bottom: 36px; }
-            .timeline-title { font-size: 50px; }
-            .timeline-for-you { font-size: 30px; right: -14px; bottom: -26px; }
-            .timeline-item { margin-bottom: 20px; }
-            .timeline-content strong { font-size: 17px; margin-bottom: 6px; }
-            .timeline-content p { font-size: 15px; line-height: 1.45; }
-
-            .dresscode-section { padding: 30px 5vw 120px 5vw; }
-            .dresscode-title { font-size: 30px; letter-spacing: 4px; }
-            .dresscode-thankyou { font-size: 32px; right: -14px; bottom: -3vh; }
-            .dresscode-subtitle { font-size: 16px; line-height: 1.5; }
-            .dresscode-divider { margin: 12px 0; }
-            .color-grid { gap: 12px; max-width: min(170px, 46vw); margin-top: 10px; }
-
-            .details-title { font-size: clamp(28px, 7.5vw, 42px); }
-            .details-signature { font-size: clamp(16px, 4.5vw, 22px); right: -12px; bottom: 0; }
-            .details-intro { font-size: clamp(13px, 3.5vw, 15px); }
-            .details-subtitle { font-size: clamp(18px, 4.5vw, 22px); }
-            .details-text { font-size: clamp(12px, 3.2vw, 14px); line-height: 1.4; }
-
-            .footer-text { font-size: 40px; margin-top: 22px; }
-            .arch-image { max-width: 280px; }
-        }
-
-        @media (max-width: 360px) {
-            .fullscreen-section { padding: 20px 0 120px 0; }
-            .details-section { padding: 3vh 5vw 120px 5vw; }
-            .greeting h1 { font-size: 32px; }
-            .greeting p { font-size: 18px; }
-            .calendar-card { padding: 20px 10px 18px; }
-            .calendar-month { font-size: 28px; }
-            .calendar-day { font-size: 19px; height: 36px; }
-            .date-wrap { width: 36px; height: 36px; }
-            .date-wrap span { font-size: 19px; }
-            .heart-svg { width: 46px; height: 46px; }
-            .where-header { margin-bottom: 50px; }
+            .where-header { margin-bottom: 40px; }
             .where-title { font-size: 48px; }
-            .where-for-you { font-size: 38px; right: -18px; bottom: -18px; }
-            .timeline-header { margin-bottom: 30px; }
-            .timeline-title { font-size: 44px; }
-            .timeline-for-you { font-size: 26px; right: -10px; bottom: -22px; }
-            .timeline-content strong { font-size: 16px; }
-            .timeline-content p { font-size: 14px; }
-            .dresscode-title { font-size: 26px; }
-            .dresscode-thankyou { font-size: 28px; right: -12px; bottom: -2.5vh; }
-            .dresscode-subtitle { font-size: 15px; }
-            .color-grid { max-width: 150px; gap: 8px; }
-            .details-title { font-size: 28px; }
-            .details-signature { font-size: 15px; }
-            .details-subtitle { font-size: 18px; }
-            .details-text { font-size: 12px; }
-        }
+            .where-for-you { font-size: 38px; right: -20px; bottom: -18px; }
+            .flip-front { padding: 24px 16px 20px; min-height: 300px; }
+            .address-top-line { margin-bottom: 14px; }
+            .address-label { font-size: 11px; letter-spacing: 3px; margin-bottom: 12px; }
+            .address-venue { font-size: 26px; margin-bottom: 10px; padding-bottom: 8px; }
+            .address-place { font-size: 18px; margin-bottom: 20px; }
+            .map-hint { padding: 12px 22px; font-size: 12px; letter-spacing: 1.5px; }
 
-        @media (max-height: 800px) and (min-width: 481px) {
-            .dresscode-section { padding: 4vh 5vw 120px 5vw; }
-            .color-grid { max-width: min(180px, 40vw); gap: 12px; }
+            .timeline-header { margin-bottom: 20px; }
+            .timeline-title { font-size: 46px; }
+            .timeline-for-you { font-size: 28px; right: -12px; bottom: -20px; }
+            .timeline-item { margin-bottom: 16px; }
+            .timeline-icon { width: 24px; height: 24px; left: -32px; font-size: 11px; }
+            .timeline::before { left: 10px; }
+            .timeline { padding-left: 30px; }
+            .timeline-content strong { font-size: 15px; margin-bottom: 3px; }
+            .timeline-content p { font-size: 13px; line-height: 1.4; }
+
+            .dresscode-title { font-size: 26px; letter-spacing: 3px; }
+            .dresscode-thankyou { font-size: 28px; right: -10px; bottom: -2vh; }
+            .dresscode-subtitle { font-size: 14px; line-height: 1.4; }
+            .dresscode-divider { margin: 8px 0; }
+            .color-grid { gap: 8px; max-width: 140px; margin-top: 8px; }
+
+            .details-title { font-size: 28px; }
+            .details-signature { font-size: 16px; right: -10px; bottom: 0; }
+            .details-intro { font-size: 13px; }
+            .details-subtitle { font-size: 18px; }
+            .details-text { font-size: 13px; line-height: 1.35; }
+            .details-container { gap: 8px; }
+
+            .footer-text { font-size: 34px; margin-top: 15px; }
+            .arch-image { max-width: 240px; }
         }
 
         @media (max-height: 700px) and (min-width: 481px) {
-            .fullscreen-section { padding: 20px 0 120px 0; }
-            .details-section { padding: 3vh 5vw 120px 5vw; }
-            .greeting { margin-bottom: 22px; }
-            .greeting h1 { font-size: 34px; margin-bottom: 14px; }
-            .greeting p { font-size: 19px; }
-            .calendar-card { padding: 24px 16px 20px; }
-            .calendar-month { font-size: 32px; margin-bottom: 18px; }
-            .calendar-day { font-size: 20px; height: 36px; }
-            .date-wrap { width: 36px; height: 36px; }
-            .date-wrap span { font-size: 20px; }
-            .heart-svg { width: 46px; height: 46px; }
-            .timeline-item { margin-bottom: 18px; }
-            .where-header { margin-bottom: 50px; }
-            .where-title { font-size: 50px; }
-            .where-for-you { font-size: 40px; bottom: -18px; right: -22px; }
-            .flip-front { padding: 28px 20px 24px; min-height: 320px; }
-            .address-venue { font-size: 26px; }
-            .address-place { font-size: 19px; margin-bottom: 18px; }
-            .timeline-header { margin-bottom: 30px; }
-            .timeline-title { font-size: 50px; }
-            .timeline-for-you { font-size: 40px; bottom: -18px; right: -22px; }
-            .timeline-content strong { font-size: 18px; }
-            .timeline-content p { font-size: 15px; }
-            .dresscode-section { padding: 3vh 5vw 120px 5vw; }
-            .color-grid { max-width: min(160px, 34vw); gap: 10px; }
+            .fullscreen-section { padding: 15px 0 90px 0; }
+            .details-section { padding: 15px 5vw 90px 5vw; }
+            .dresscode-section { padding: 15px 5vw 90px 5vw; }
+            .greeting { margin-bottom: 16px; }
+            .greeting h1 { font-size: 30px; margin-bottom: 10px; }
+            .greeting p { font-size: 17px; }
+            .calendar-card { padding: 20px 16px 16px; }
+            .calendar-month { font-size: 28px; margin-bottom: 14px; }
+            .calendar-day { font-size: 18px; height: 32px; }
+            .date-wrap { width: 32px; height: 32px; }
+            .date-wrap span { font-size: 18px; }
+            .heart-svg { width: 42px; height: 42px; }
+            .timeline-item { margin-bottom: 14px; }
+            .where-header { margin-bottom: 30px; }
+            .where-title { font-size: 44px; }
+            .where-for-you { font-size: 36px; bottom: -15px; right: -18px; }
+            .flip-front { padding: 20px 16px 20px; min-height: 280px; }
+            .address-venue { font-size: 24px; }
+            .address-place { font-size: 18px; margin-bottom: 16px; }
+            .timeline-header { margin-bottom: 20px; }
+            .timeline-title { font-size: 44px; }
+            .timeline-for-you { font-size: 36px; bottom: -15px; right: -18px; }
+            .timeline-content strong { font-size: 16px; }
+            .timeline-content p { font-size: 14px; }
+            .color-grid { max-width: 130px; gap: 8px; }
         }
 
         @media (min-width: 1400px) {
@@ -880,7 +851,6 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator"><span>Далее</span></div>
     </section>
 
     <section class="fullscreen-section section-sage where-section" data-section>
@@ -920,7 +890,6 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator"><span>Далее</span></div>
     </section>
 
     <section class="fullscreen-section section-powder timeline-section" data-section>
@@ -960,7 +929,6 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator"><span>Далее</span></div>
     </section>
 
     <section class="fullscreen-section section-dresscode dresscode-section" data-section>
@@ -974,7 +942,6 @@
                 <span>◆</span>
             </div>
 
-            <!-- Убраны лишние <br>, текст ляжет ровно -->
             <p class="dresscode-subtitle">Для нас главное — ваше присутствие!<br>Но мы будем рады, если в своих нарядах вы поддержите цветовую гамму нашей свадьбы.</p>
 
             <div class="color-grid">
@@ -986,7 +953,6 @@
                 <div class="color-circle"></div>
             </div>
         </div>
-        <div class="scroll-indicator"><span>Далее</span></div>
     </section>
 
     <section class="fullscreen-section section-blush details-section" data-section>
@@ -1015,7 +981,6 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator"><span>Далее</span></div>
     </section>
 
     <section class="fullscreen-section section-linen footer-image" data-section>
