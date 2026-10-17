@@ -99,8 +99,7 @@
             width: 100%;
             min-height: 100vh; min-height: 100dvh;
             display: flex; align-items: center; justify-content: center;
-            /* Отступ снизу 70px, чтобы текст не наезжал на плеер и "Далее" */
-            padding: 20px 0 70px 0; 
+            padding: 15px 0 90px 0; 
             position: relative; overflow: hidden;
         }
         .section-inner {
@@ -147,22 +146,21 @@
             margin-bottom: 40px; padding-left: 8px;
         }
         
-        /* СКРОЛЛ-ИНДИКАТОР (ДАЛЕЕ) - Возвращен вниз */
         .scroll-indicator {
-            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-            z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 6px;
-            color: var(--text-soft); font-size: 10px; letter-spacing: 3px;
-            text-transform: uppercase; opacity: 0.6;
+            position: absolute; bottom: 90px; left: 50%; transform: translateX(-50%);
+            z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 10px;
+            color: var(--text-soft); font-size: 11px; letter-spacing: 3px;
+            text-transform: uppercase; opacity: 0.7;
             animation: floatSoftDown 2.8s ease-in-out infinite; pointer-events: none;
         }
         .scroll-indicator::after {
-            content: ''; width: 1px; height: 20px;
+            content: ''; width: 1px; height: 28px;
             background: linear-gradient(180deg, currentColor, transparent);
         }
         .scroll-indicator.light { color: #fdfbf8; opacity: 0.9; }
         @keyframes floatSoftDown {
             0%, 100% { transform: translate(-50%, 0); }
-            50% { transform: translate(-50%, 4px); }
+            50% { transform: translate(-50%, 6px); }
         }
 
         /* АНИМАЦИИ */
@@ -178,7 +176,7 @@
             60% { transform: translate(-50%, -35%) scale(1.06); }
             80% { transform: translate(-50%, -35%) scale(1); }
         }
-        @keyframes shineRun { 0% { stroke-dashoffset: 236; } 100% { stroke-dashoffset: -20; } }
+        @keyframes shineRun { 0% { stroke-dashoffset: 256; } 100% { stroke-dashoffset: 0; } }
         @keyframes diamondSparkle { 0%, 100% { opacity: 0.85; } 40% { opacity: 1; } 70% { opacity: 0.7; } }
         @keyframes gentleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
         @keyframes softGlow {
@@ -186,6 +184,12 @@
             50% { text-shadow: 0 2px 14px rgba(184,164,140,0.35); }
         }
         @keyframes hintPulse { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.05); opacity: 1; } }
+        @keyframes flarePop {
+            0%, 80%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            82% { opacity: 1; transform: scale(1) rotate(0deg); }
+            88% { opacity: 1; transform: scale(1.5) rotate(15deg); }
+            95% { opacity: 0; transform: scale(2) rotate(30deg); }
+        }
 
         /* ЦВЕТА СЕКЦИЙ */
         .section-ivory { background-color: var(--ivory); }
@@ -241,54 +245,60 @@
             color: var(--text-soft); letter-spacing: 0.4px;
             max-width: 460px; margin: 0 auto; text-align: center; text-wrap: balance;
         }
+
+        /* ПОЛНЫЙ ВОЗВРАЩЕННЫЙ КАЛЕНДАРЬ */
         .calendar-card {
             background: #ffffff; border: 1px solid var(--line); border-radius: 22px;
-            padding: 24px 16px 20px; color: var(--text); position: relative;
+            padding: 32px 22px 28px; color: var(--text); position: relative;
             box-shadow: 0 16px 50px rgba(184, 164, 140, 0.1);
         }
         .calendar-month {
             font-family: 'Cormorant Garamond', serif; font-weight: 400;
-            font-size: 32px; letter-spacing: 7px; text-transform: uppercase;
-            color: var(--text); margin-bottom: 20px; position: relative;
+            font-size: 40px; letter-spacing: 9px; text-transform: uppercase;
+            color: var(--text); margin-bottom: 26px; position: relative;
             display: block; text-align: center;
         }
         .calendar-month::after {
-            content: ''; position: absolute; bottom: -10px; left: 50%;
+            content: ''; position: absolute; bottom: -12px; left: 50%;
             transform: translateX(-50%); width: 50px; height: 1px;
             background: var(--text-light);
         }
         .calendar-grid {
             display: grid; grid-template-columns: repeat(7, 1fr);
-            gap: 2px 2px; max-width: 340px; margin: 0 auto;
+            gap: 4px 2px; max-width: 340px; margin: 0 auto;
         }
         .calendar-day-name {
-            font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 500;
+            font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 500;
             letter-spacing: 1px; text-transform: lowercase; color: var(--text-light);
-            padding-bottom: 4px; text-align: center;
+            padding-bottom: 8px; text-align: center;
         }
         .calendar-day {
-            font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500;
-            color: var(--text); height: 36px; display: flex; align-items: center;
+            font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500;
+            height: 44px; display: flex; align-items: center;
             justify-content: center; position: relative;
         }
         .calendar-day.other-month { color: var(--text-light); opacity: 0.45; }
         .calendar-day.highlighted { position: relative; z-index: 2; color: var(--text); font-weight: 600; }
+
         .date-wrap {
-            position: relative; width: 36px; height: 36px;
+            position: relative; width: 44px; height: 44px;
             display: flex; align-items: center; justify-content: center;
         }
-        .date-wrap span { position: relative; z-index: 2; font-size: 21px; line-height: 1; }
+        .date-wrap span { position: relative; z-index: 2; font-size: 23px; line-height: 1; }
+        
         .heart-svg {
-            position: absolute; top: 50%; left: 50%; width: 48px; height: 48px;
+            position: absolute; top: 50%; left: 50%; width: 58px; height: 58px;
             transform: translate(-50%, -35%); pointer-events: none; z-index: 0;
             animation: heartBeat 1.8s ease-in-out infinite;
             transform-origin: center center; overflow: visible;
         }
         .heart-glow-path { fill: none; stroke: #d8d8d8; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; opacity: 0.55; filter: url(#softBlur); }
         .heart-path { fill: none; stroke: url(#silverGrad); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 200; stroke-dashoffset: 200; animation: heartDraw 1.4s ease 0.5s forwards; }
-        .heart-shine { fill: none; stroke: #ffffff; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 16 220; stroke-dashoffset: 236; opacity: 0.95; animation: shineRun 3s linear infinite 1.8s; }
-        .diamond { fill: none; stroke: url(#silverGrad); stroke-width: 1.1; stroke-linejoin: round; stroke-linecap: round; animation: diamondSparkle 1.8s ease-in-out infinite; transform-origin: center; }
+        .heart-shine { fill: none; stroke: #ffffff; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 16 240; stroke-dashoffset: 256; opacity: 0.95; animation: shineRun 3s linear infinite 1.8s; }
+        
+        .diamond { fill: none; stroke: url(#silverGrad); stroke-width: 1.1; stroke-linejoin: round; stroke-linecap: round; transform-origin: center; }
         .diamond-inner { fill: none; stroke: #e8e8e8; stroke-width: 0.8; stroke-linejoin: round; opacity: 0.9; }
+        .star-flare { fill: #ffffff; opacity: 0; transform-origin: 31px 2px; animation: flarePop 5s ease-in-out infinite; }
 
         /* СЕКЦИЯ 3 — ЛОКАЦИЯ */
         .where-section .section-inner { text-align: center; position: relative; }
@@ -416,7 +426,7 @@
 
         /* СЕКЦИЯ 5 — DRESS-CODE */
         .dresscode-section {
-            padding: 20px 5vw 70px 5vw;
+            padding: 20px 5vw 90px 5vw;
             align-items: stretch;
         }
         .dresscode-section .section-inner {
@@ -506,7 +516,6 @@
                 radial-gradient(ellipse 70% 55% at 82% 92%, rgba(0, 0, 0, 0.4), transparent 60%);
             pointer-events: none;
         }
-
         .color-circle:nth-child(1) { --c: #f0e6d6; }
         .color-circle:nth-child(2) { --c: #d6bf9d; }
         .color-circle:nth-child(3) { --c: #b6c4a4; }
@@ -516,10 +525,9 @@
 
         /* ============================================
            СЕКЦИЯ 6 — DETAILS 
-           Увеличенные шрифты и отступы для заполнения
            ============================================ */
         .details-section {
-            padding: 20px 5vw 70px 5vw;
+            padding: 20px 5vw 90px 5vw;
             align-items: stretch;
             background-color: #f8ede8;
         }
@@ -620,9 +628,9 @@
 
         /* АДАПТИВНОСТЬ */
         @media (max-width: 768px) {
-            .fullscreen-section { padding: 15px 0 70px 0; }
-            .details-section { padding: 15px 5vw 70px 5vw; }
-            .dresscode-section { padding: 15px 5vw 70px 5vw; }
+            .fullscreen-section { padding: 15px 0 90px 0; }
+            .details-section { padding: 15px 5vw 90px 5vw; }
+            .dresscode-section { padding: 15px 5vw 90px 5vw; }
             .section-inner { padding: 0 16px; }
             .details-section .section-inner { padding: 0; }
         }
@@ -630,21 +638,22 @@
         @media (max-width: 480px) {
             .hero-date { font-size: 17px; letter-spacing: 7px; margin-bottom: 30px; }
 
-            .greeting { margin-bottom: 20px; }
+            .greeting { margin-bottom: 16px; }
             .greeting::before { display: none; }
-            .greeting h1 { font-size: 32px; margin-bottom: 12px; letter-spacing: 1px; }
+            .greeting h1 { font-size: 30px; margin-bottom: 10px; letter-spacing: 1px; }
             .greeting h1::before, .greeting h1::after { display: none; }
             .greeting p { font-size: 18px; line-height: 1.45; }
 
-            .calendar-card { padding: 20px 14px 18px; border-radius: 18px; }
-            .calendar-month { font-size: 28px; letter-spacing: 5px; margin-bottom: 16px; }
-            .calendar-month::after { bottom: -8px; width: 36px; }
-            .calendar-grid { gap: 2px 1px; }
-            .calendar-day-name { font-size: 11px; padding-bottom: 4px; letter-spacing: 0.5px; }
-            .calendar-day { font-size: 18px; height: 34px; }
-            .date-wrap { width: 34px; height: 34px; }
-            .date-wrap span { font-size: 18px; }
-            .heart-svg { width: 42px; height: 42px; }
+            /* ВОЗВРАЩЕННЫЕ РАЗМЕРЫ КАЛЕНДАРЯ НА ТЕЛЕФОНЕ */
+            .calendar-card { padding: 24px 14px 22px; border-radius: 18px; }
+            .calendar-month { font-size: 32px; letter-spacing: 5px; margin-bottom: 22px; }
+            .calendar-month::after { bottom: -10px; width: 40px; }
+            .calendar-grid { gap: 3px 1px; }
+            .calendar-day-name { font-size: 12px; padding-bottom: 6px; letter-spacing: 0.5px; }
+            .calendar-day { font-size: 20px; height: 40px; }
+            .date-wrap { width: 40px; height: 40px; }
+            .date-wrap span { font-size: 21px; }
+            .heart-svg { width: 50px; height: 50px; }
 
             .where-header { margin-bottom: 40px; }
             .where-title { font-size: 48px; }
@@ -672,7 +681,6 @@
             .dresscode-divider { margin: 8px 0; }
             .color-grid { gap: 8px; max-width: 140px; margin-top: 8px; }
 
-            /* DETAILS — крупнее */
             .details-title { font-size: 30px; }
             .details-signature { font-size: 18px; right: -10px; bottom: 0; }
             .details-intro { font-size: 14.5px; }
@@ -685,9 +693,9 @@
         }
 
         @media (max-height: 700px) and (min-width: 481px) {
-            .fullscreen-section { padding: 15px 0 70px 0; }
-            .details-section { padding: 15px 5vw 70px 5vw; }
-            .dresscode-section { padding: 15px 5vw 70px 5vw; }
+            .fullscreen-section { padding: 15px 0 90px 0; }
+            .details-section { padding: 15px 5vw 90px 5vw; }
+            .dresscode-section { padding: 15px 5vw 90px 5vw; }
             .greeting { margin-bottom: 16px; }
             .greeting h1 { font-size: 30px; margin-bottom: 10px; }
             .greeting p { font-size: 17px; }
@@ -796,18 +804,34 @@
                                     <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
                                         <feGaussianBlur stdDeviation="2.2"/>
                                     </filter>
+                                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feGaussianBlur stdDeviation="1.5" result="blur" />
+                                        <feMerge>
+                                            <feMergeNode in="blur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
                                 </defs>
+                                
                                 <path class="heart-glow-path" d="M 30 50 C 30 50, 6 34, 6 19 C 6 11, 12 5, 19 5 C 24 5, 28 8, 30 12 C 32 8, 36 5, 41 5 C 48 5, 54 11, 54 19 C 54 34, 30 50, 30 50 Z" />
+                                
                                 <path class="heart-path" d="M 30 50 C 30 50, 6 34, 6 19 C 6 11, 12 5, 19 5 C 24 5, 28 8, 30 12 C 32 8, 36 5, 41 5 C 48 5, 54 11, 54 19 C 54 34, 30 50, 30 50 Z" />
+                                
                                 <path class="heart-shine" d="M 30 50 C 30 50, 6 34, 6 19 C 6 11, 12 5, 19 5 C 24 5, 28 8, 30 12 C 32 8, 36 5, 41 5 C 48 5, 54 11, 54 19 C 54 34, 30 50, 30 50 Z" />
+                                
                                 <g class="diamond">
-                                    <polygon points="30,2 35,8 30,14 25,8" />
-                                    <line x1="30" y1="2" x2="30" y2="14" />
-                                    <line x1="25" y1="8" x2="35" y2="8" />
-                                    <line class="diamond-inner" x1="25" y1="8" x2="30" y2="2" />
-                                    <line class="diamond-inner" x1="35" y1="8" x2="30" y2="2" />
-                                    <line class="diamond-inner" x1="25" y1="8" x2="30" y2="14" />
-                                    <line class="diamond-inner" x1="35" y1="8" x2="30" y2="14" />
+                                    <polygon points="30,0 37,8 30,16 23,8" />
+                                    <line x1="30" y1="0" x2="30" y2="16" />
+                                    <line x1="23" y1="8" x2="37" y2="8" />
+                                    <line class="diamond-inner" x1="23" y1="8" x2="30" y2="0" />
+                                    <line class="diamond-inner" x1="37" y1="8" x2="30" y2="0" />
+                                    <line class="diamond-inner" x1="23" y1="8" x2="30" y2="16" />
+                                    <line class="diamond-inner" x1="37" y1="8" x2="30" y2="16" />
+                                </g>
+
+                                <g class="star-flare" filter="url(#glow)">
+                                    <path d="M31 -14 L32 1 L48 2 L32 3 L31 18 L30 3 L14 2 L30 1 Z" />
+                                    <circle cx="31" cy="2" r="1.5" fill="#ffffff" />
                                 </g>
                             </svg>
                         </div>
@@ -820,6 +844,7 @@
                     <div class="calendar-day">10</div>
                     <div class="calendar-day">11</div>
                     <div class="calendar-day">12</div>
+                    
                     <div class="calendar-day">13</div>
                     <div class="calendar-day">14</div>
                     <div class="calendar-day">15</div>
@@ -827,6 +852,7 @@
                     <div class="calendar-day">17</div>
                     <div class="calendar-day">18</div>
                     <div class="calendar-day">19</div>
+                    
                     <div class="calendar-day">20</div>
                     <div class="calendar-day">21</div>
                     <div class="calendar-day">22</div>
@@ -834,19 +860,19 @@
                     <div class="calendar-day">24</div>
                     <div class="calendar-day">25</div>
                     <div class="calendar-day">26</div>
+                    
                     <div class="calendar-day">27</div>
                     <div class="calendar-day">28</div>
                     <div class="calendar-day">29</div>
                     <div class="calendar-day">30</div>
-
                     <div class="calendar-day other-month">1</div>
                     <div class="calendar-day other-month">2</div>
                     <div class="calendar-day other-month">3</div>
+                    
                     <div class="calendar-day other-month">4</div>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator"><span>Далее</span></div>
     </section>
 
     <section class="fullscreen-section section-sage where-section" data-section>
@@ -886,7 +912,6 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator"><span>Далее</span></div>
     </section>
 
     <section class="fullscreen-section section-powder timeline-section" data-section>
@@ -926,7 +951,6 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator"><span>Далее</span></div>
     </section>
 
     <section class="fullscreen-section section-dresscode dresscode-section" data-section>
@@ -951,7 +975,6 @@
                 <div class="color-circle"></div>
             </div>
         </div>
-        <div class="scroll-indicator"><span>Далее</span></div>
     </section>
 
     <section class="fullscreen-section section-blush details-section" data-section>
@@ -980,7 +1003,6 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator"><span>Далее</span></div>
     </section>
 
     <section class="fullscreen-section section-linen footer-image" data-section>
@@ -998,16 +1020,21 @@
             const flipFront = document.getElementById('flipFront');
             const flipBackBtn = document.getElementById('flipBackBtn');
             const mapIframe = document.getElementById('mapIframe');
-            const MAP_SEARCH_QUERY = 'село Грушевое 9';
+
+            // Координаты отеля/ресторана "Фидан"
+            const LONGITUDE = 34.035089;
+            const LATITUDE = 45.006886;
 
             function getMapUrl() {
-                return 'https://yandex.ru/map-widget/v1/?mode=search&text=' + encodeURIComponent(MAP_SEARCH_QUERY) + '&z=15';
+                return 'https://yandex.ru/map-widget/v1/?ll=' + LONGITUDE + '%2C' + LATITUDE + '&z=17&pt=' + LONGITUDE + '%2C' + LATITUDE + '%2Cpm2rdm';
             }
 
             flipFront.addEventListener('click', (e) => {
                 e.stopPropagation();
                 flipContainer.classList.add('flipped');
-                if (!mapIframe.src || mapIframe.src === 'about:blank') mapIframe.src = getMapUrl();
+                if (!mapIframe.src || mapIframe.src === 'about:blank') {
+                    mapIframe.src = getMapUrl();
+                }
             });
 
             flipBackBtn.addEventListener('click', (e) => {
